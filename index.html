@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dani Sanabria - Mentoría Laboral</title>
+  <meta 
+    name="description" 
+    content="Mentoría laboral intensiva y 100% personalizada para mujeres jóvenes que buscan su primer empleo profesional. CV, LinkedIn, entrevistas y acompañamiento real. Conocé los planes." 
+  />
+
+  <meta 
+    name="keywords" 
+    content="mentoría laboral, primer empleo, mentoría jóvenes, CV profesional, LinkedIn, entrevistas de trabajo, Gen Z, consultoría RRHH" 
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Dani Sanabria — Mentoría Laboral",
+    "url": "https://danisanabria-vercel.vercel.app",
+    "description": "Mentoría laboral personalizada para jóvenes que buscan su primer empleo profesional y consultoría organizacional para empresas con equipos Gen Z.",
+    "serviceType": ["Mentoría laboral", "Consultoría de RRHH", "Capacitación Gen Z"],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Argentina"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Dani Sanabria"
+    },
+    "sameAs": [
+      "https://www.instagram.com/danisanabria",
+      "https://www.linkedin.com/in/danisanabria"
+    ]
+  }
+  </script>
+
+  <!--
+  Bloque FAQ comentado: activar cuando exista una sección de preguntas frecuentes en el sitio.
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es la mentoría laboral de Dani Sanabria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es un acompañamiento personalizado para mujeres jóvenes que buscan su primer empleo profesional, con foco en CV, LinkedIn, entrevistas y habilidades blandas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo puedo empezar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Podés contactarte por WhatsApp o completar el formulario de contacto para agendar una sesión de diagnóstico gratuita."
+        }
+      }
+    ]
+  }
+  </script>
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Geomini:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cosmic-bg: #0B0813;
+      --cosmic-card: #18112B;
+      --cosmic-card-hover: #1E1535;
+      --neon-lime: #ec51dc;
+      --neon-pink: #c6f074;
+      --text-main: #FFFFFF;
+      --text-muted: #B3B0CD;
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-bg: rgba(24, 17, 43, 0.6);
+    }
+
+    .modo-b2c {
+      --cosmic-bg: #17161a;
+      --cosmic-card: #232226;
+      --cosmic-card-hover: #2d2c30;
+      --neon-lime: #c9a0f1;
+      --neon-pink: #e6338a;
+      --text-main: #fafafa;
+      --text-muted: #a0a0a8;
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-bg: rgba(23, 22, 26, 0.6);
+      background: linear-gradient(135deg, #17161a 0%, #1a1920 40%, #1f1d26 70%, #17161a 100%);
+    }
+    .modo-b2c nav { background: rgba(23, 22, 26, 0.85); }
+
+    .modo-b2b {
+      --neon-lime: #c6f074;
+    }
+    .modo-b2b .btn:hover { background: #b0d860; box-shadow: 0 0 20px rgba(198,240,116,0.3); }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(135deg, #0B0813 0%, #120D20 40%, #1A0F2E 70%, #0B0813 100%);
+      background-attachment: fixed;
+      color: var(--text-muted);
+      line-height: 1.6;
+      transition: background 0.5s;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Geomini', sans-serif;
+      color: var(--text-main);
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; width: 100%;
+      padding: 0.8rem 2rem;
+      background: rgba(11, 8, 19, 0.85);
+      backdrop-filter: blur(16px);
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 100;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .logo { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 1.3rem; color: var(--neon-lime); flex-shrink: 0; }
+    .logo span { color: var(--text-main); }
+
+    .nav-center { display: flex; align-items: center; }
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      align-items: center;
+    }
+    .nav-links a { transition: color 0.3s; color: var(--text-muted); padding: 0.3rem 0.6rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--text-main); }
+    .nav-talento { color: #c9a0f1 !important; }
+    .nav-empresa { color: #c6f074 !important; }
+    .nav-talento:hover, .nav-empresa:hover { color: var(--text-main) !important; }
+    .hidden { display: none !important; }
+
+    .menu-toggle { display: none; background: none; border: none; color: var(--text-main); font-size: 1.5rem; cursor: pointer; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; scroll-margin-top: 70px; }
+    .section-tag {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+    }
+    .section-tag.pink { background: rgba(236,81,220,0.1); color: var(--neon-lime); border: 1px solid rgba(236,81,220,0.2); }
+    .section-tag.purple { background: rgba(198,240,116,0.1); color: var(--neon-pink); border: 1px solid rgba(198,240,116,0.2); }
+    .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+    .section-title.pink { color: var(--neon-lime); }
+    .section-title.purple { color: var(--neon-pink); }
+    .section-subtitle { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin-bottom: 3rem; }
+
+    /* ===== HERO ===== */
+    .hero-tag {
+      display: inline-block;
+      background: rgba(236,81,220,0.1);
+      color: var(--neon-lime);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(236,81,220,0.2);
+    }
+
+    /* Hero Split (B2C | B2B) */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      padding-top: 56px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .hero-panel {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 3rem;
+      overflow: hidden;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .hero-panel:hover .hero-panel-images img { transform: scale(1.05); }
+    .hero-panel-images {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+      z-index: 0;
+    }
+    .hero-panel-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .hero-panel-images img:first-child { grid-column: 1 / -1; }
+    .hero-panel-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom, rgba(11,8,19,0.55), rgba(11,8,19,0.92));
+    }
+    .hero-panel-b2c .hero-panel-overlay { background: linear-gradient(to bottom, rgba(236,81,220,0.18), rgba(11,8,19,0.94)); }
+    .hero-panel-b2b .hero-panel-overlay { background: linear-gradient(to bottom, rgba(198,240,116,0.15), rgba(11,8,19,0.94)); }
+    .hero-panel-content {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+    }
+    .hero-panel-content h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      color: var(--text-main);
+    }
+    .hero-panel-content h1 em { font-style: normal; color: var(--neon-lime); text-shadow: 0 0 20px rgba(236,81,220,0.3); }
+    .hero-panel-content p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 460px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-panel-b2c .hero-tag { background: rgba(236,81,220,0.15); color: var(--neon-lime); border-color: rgba(236,81,220,0.3); }
+    .hero-panel-b2b .hero-tag { background: rgba(198,240,116,0.15); color: #c6f074; border-color: rgba(198,240,116,0.3); }
+    .hero-panel-b2b .hero-panel-content h1 em { color: #c6f074; text-shadow: 0 0 20px rgba(198,240,116,0.3); }
+
+    .btn {
+      display: inline-block;
+      background: var(--neon-lime);
+      color: var(--cosmic-bg);
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { background: #f07be4; transform: translateY(-2px); box-shadow: 0 0 20px rgba(236,81,220,0.3); }
+    .btn-outline {
+      background: transparent;
+      color: var(--neon-lime);
+      border: 2px solid var(--neon-lime);
+      margin-left: 1rem;
+    }
+    .btn-outline:hover { background: rgba(236,81,220,0.08); }
+    .btn-purple { background: var(--neon-pink); color: var(--cosmic-bg); }
+    .btn-purple:hover { background: #d4f59a; box-shadow: 0 0 20px rgba(198,240,116,0.3); }
+    .btn-hero-b2b { background: #c6f074; color: var(--cosmic-bg); font-weight: 800; }
+    .btn-hero-b2b:hover { background: #d4f59a; box-shadow: 0 0 20px rgba(198,240,116,0.3); }
+    .btn-hero-b2b-outline { background: transparent; color: #c6f074; border: 2px solid #c6f074; font-weight: 800; }
+    .btn-hero-b2b-outline:hover { background: rgba(198,240,116,0.08); }
+
+    .hero-panel-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .hero-panel-actions .btn { margin-left: 0; }
+    .btn-outline-purple {
+      background: transparent;
+      color: var(--neon-pink);
+      border: 2px solid var(--neon-pink);
+      margin-left: 1rem;
+    }
+    .btn-outline-purple:hover { background: rgba(198,240,116,0.08); }
+
+    /* ===== GRIDS ===== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-text h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--text-main); }
+    .about-text h2 span { color: var(--neon-lime); }
+    .about-text p { color: var(--text-muted); margin-bottom: 1rem; font-size: 1.05rem; }
+    .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .about-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+      text-align: center;
+    }
+    .about-card:hover { border-color: var(--neon-lime); transform: translateY(-3px); box-shadow: 0 0 15px rgba(236,81,220,0.1); }
+    .about-card .icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .about-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-main); }
+    .about-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .pain-grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .pain-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+    }
+    .pain-card:hover { border-color: var(--neon-lime); transform: translateY(-4px); box-shadow: 0 0 20px rgba(236,81,220,0.1); }
+    .pain-card.purple:hover { border-color: var(--neon-pink); box-shadow: 0 0 20px rgba(198,240,116,0.1); }
+    .pain-card .num {
+      display: inline-flex;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(236,81,220,0.1);
+      color: var(--neon-lime);
+      align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .pain-card.purple .num { background: rgba(198,240,116,0.1); color: var(--neon-pink); }
+    .pain-card h4 { font-size: 1.1rem; margin-bottom: 0.8rem; color: var(--text-main); }
+    .pain-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+    .solucion-macro {
+      margin: 4rem auto 0 auto;
+      max-width: 850px;
+      background: var(--glass-bg);
+      border: 1px solid rgba(198,240,116,0.15);
+      border-radius: 20px;
+      padding: 2.5rem 3rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .solucion-macro h3 {
+      color: var(--neon-pink);
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .solucion-macro p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .methodology {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 4rem;
+      margin-top: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .methodology.purple-bg { border-color: rgba(198,240,116,0.1); }
+    .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+    .phases-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
+    .phase {
+      background: var(--cosmic-card);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    .phase:hover { border-color: var(--neon-lime); box-shadow: 0 0 15px rgba(236,81,220,0.08); }
+    .phase .step {
+      display: inline-block;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .phase .step.pink { background: var(--neon-lime); color: var(--cosmic-bg); }
+    .phase .step.purple { background: var(--neon-pink); color: #fff; }
+    .phase h4 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-main); }
+    .phase p { color: var(--text-muted); font-size: 0.95rem; }
+
+    .promise {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      text-align: left;
+      background: var(--glass-bg);
+      border-radius: 24px;
+      padding: 4rem;
+      margin: 4rem auto;
+      max-width: 900px;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(8px);
+    }
+    .promise-photo {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 4px solid var(--neon-lime);
+      box-shadow: 0 0 20px rgba(236,81,220,0.2);
+    }
+    .promise blockquote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+      color: var(--text-main);
+    }
+    .promise cite { color: var(--text-muted); font-style: normal; font-size: 1rem; display: block; }
+
+    .sobre-mi-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .sobre-mi-photo {
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--neon-lime);
+      box-shadow: 0 0 20px rgba(236,81,220,0.2);
+      margin: 0 auto;
+    }
+    .sobre-mi-text p { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7; }
+    body.modo-sobre-mi section:not(#sobre-mi),
+    body.modo-sobre-mi .promise { display: none !important; }
+    body.modo-sobre-mi #sobre-mi { display: block; }
+    body.modo-inicio section:not(#inicio),
+    body.modo-inicio .promise { display: none !important; }
+    body.modo-propuesta #sobre-mi { display: none !important; }
+    body.modo-contacto section:not(#contacto-form),
+    body.modo-contacto .promise { display: none !important; }
+    body.modo-contacto #contacto-form { display: block; }
+
+    .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .deliverable-item {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+    }
+    .deliverable-item:hover { border-color: var(--neon-lime); }
+    .deliverable-item .check { color: var(--neon-lime); font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .deliverable-item h4 { font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-main); }
+    .deliverable-item p { color: var(--text-muted); font-size: 0.9rem; }
+    .deliverable-item .check.purple { color: var(--neon-pink); }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; align-items: start; }
+    .pricing-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+    }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    .pricing-card.featured {
+      border: 2px solid var(--neon-lime);
+      box-shadow: 0 0 30px rgba(236,81,220,0.25), 0 0 60px rgba(236,81,220,0.1);
+      transform: scale(1.05);
+      z-index: 2;
+      background: linear-gradient(135deg, rgba(24,17,43,0.8), rgba(236,81,220,0.05));
+    }
+    .pricing-card.featured:hover { transform: scale(1.05) translateY(-4px); box-shadow: 0 0 40px rgba(236,81,220,0.35), 0 0 80px rgba(236,81,220,0.15); }
+    .pricing-card.featured::after {
+      content: '⭐ MÁS ELEGIDO';
+      position: absolute;
+      top: 156px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--neon-lime);
+      color: var(--cosmic-bg);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.4rem 1.2rem;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      z-index: 2;
+      box-shadow: 0 0 15px rgba(236,81,220,0.4);
+    }
+    .pricing-card-img { width: 100%; height: 160px; object-fit: cover; border-radius: 16px 16px 0 0; display: block; }
+    .pricing-card-body { padding: 1.5rem 2rem 0; display: flex; flex-direction: column; flex: 1; }
+    .pricing-card-body .btn { margin-top: auto; }
+    .pricing-card h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main); }
+    .pricing-card .desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .pricing-card .price { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--text-main); }
+    .pricing-card .price small { font-size: 1.6rem; font-weight: 500; color: var(--text-muted); margin-left: 0.2rem; }
+    .pricing-card .price-info { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .pricing-card .price-detail { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; line-height: 1.5; }
+    .pricing-card .btn { width: 100%; text-align: center; padding: 0.9rem; }
+
+    .pricing-card.featured .pricing-card-body { padding: 2rem 2.5rem 0; }
+    .pricing-card.featured h4 { font-size: 1.5rem; }
+    .pricing-card.featured .price { font-size: 3rem; }
+    .pricing-card.featured .desc { font-size: 1rem; }
+    .pricing-card.featured .price-detail { font-size: 0.95rem; }
+
+    /* B2B Pricing */
+    .pricing-card.b2b-card { border-color: rgba(198,240,116,0.3); }
+    .pricing-card.b2b-card.featured::after { content: 'RECOMENDADO'; background: var(--neon-pink); color: #fff; }
+    .pricing-card.b2b-card .price-consult { font-size: 1.6rem; font-weight: 800; color: var(--neon-pink); margin-bottom: 0.3rem; }
+    .b2b-features {
+      list-style: none;
+      margin: 1.2rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .b2b-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .b2b-features li::before { content: '▸'; color: var(--neon-pink); font-weight: 700; flex-shrink: 0; }
+
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+
+    /* Timeline Accordion B2B */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 32px;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--neon-pink), var(--neon-lime));
+      border-radius: 3px;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--neon-pink);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      z-index: 1;
+      border: 3px solid var(--cosmic-bg);
+      box-shadow: 0 0 10px rgba(198,240,116,0.4);
+    }
+    .timeline-header {
+      background: var(--cosmic-card);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .timeline-header:hover { border-color: var(--neon-pink); }
+    .timeline-header h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+    }
+    .timeline-arrow {
+      font-size: 1.2rem;
+      color: var(--neon-pink);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+    .timeline-item.open .timeline-arrow { transform: rotate(180deg); }
+    .timeline-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.5rem;
+      background: var(--cosmic-card);
+      border-left: 1px solid var(--glass-border);
+      border-right: 1px solid var(--glass-border);
+      border-radius: 0 0 12px 12px;
+    }
+    .timeline-item.open .timeline-body {
+      max-height: 200px;
+      padding: 0 1.5rem 1.2rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .timeline-body p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .testimonial-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+    }
+    .testimonial-card:hover { border-color: rgba(236,81,220,0.3); }
+    .testimonial-card p { color: var(--text-muted); font-style: italic; margin-bottom: 1rem; font-size: 0.95rem; }
+    .testimonial-card .author { font-weight: 700; color: var(--neon-lime); }
+
+    .cta-section {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: var(--glass-bg);
+      border-radius: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(8px);
+    }
+    .cta-section h2 { font-size: 2.8rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-main); }
+    .cta-section p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+
+    /* Contact form */
+    .contact-form-section {
+      padding: 5rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .contact-form {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--glass-border);
+      background: var(--cosmic-card);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--neon-lime);
+    }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form .btn { align-self: flex-start; }
+    .contact-form-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--glass-border);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    footer .social { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+    footer .social a { color: var(--text-muted); transition: color 0.3s; display: inline-flex; align-items: center; }
+    footer .social a:hover { color: var(--neon-lime); }
+    footer .social svg { width: 24px; height: 24px; fill: currentColor; }
+
+    .how-works {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-top: 2rem;
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .how-works-content { flex: 1; }
+    .how-works p { color: var(--text-muted); font-size: 1.05rem; max-width: 800px; }
+    .how-works-img {
+      width: 280px;
+      height: 200px;
+      border-radius: 16px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    /* ===== TOGGLE VISIBILITY ===== */
+    .modo-b2c .b2b-only,
+    .modo-b2b .b2c-only { display: none !important; }
+
+    .b2c-only, .b2b-only { animation: fadeSection 0.45s ease; }
+    @keyframes fadeSection {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero-split { grid-template-columns: 1fr 1fr; }
+      .hero-panel-content h1 { font-size: 2.2rem; }
+      .hero-panel { padding: 3rem 2rem; }
+    }
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .sobre-mi-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .pain-grid-4 { grid-template-columns: 1fr; }
+      .phases { grid-template-columns: 1fr; }
+      .phases-4 { grid-template-columns: 1fr; }
+      .methodology { padding: 2rem; }
+      .promise { padding: 2rem; flex-direction: column; text-align: center; gap: 1.5rem; }
+      .promise blockquote { font-size: 1.3rem; }
+      .how-works { flex-direction: column; text-align: center; }
+      .how-works-img { width: 100%; max-width: 400px; height: auto; aspect-ratio: 1.4; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0.7rem 1.2rem; flex-wrap: wrap; gap: 0.5rem; }
+      .nav-center { order: 4; width: 100%; }
+      .nav-links { display: none; }
+      .menu-toggle { display: block; order: 2; }
+      .nav-links.open {
+        display: flex;
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(11,8,19,0.95);
+        backdrop-filter: blur(16px);
+        padding: 1rem 2rem;
+        gap: 0.8rem;
+        border-bottom: 1px solid var(--glass-border);
+      }
+      section { padding: 3rem 1.2rem; }
+      .hero-split { grid-template-columns: 1fr; padding-top: 96px; }
+      .hero-panel { padding: 3rem 1.5rem; min-height: 70vh; }
+      .hero-panel-content h1 { font-size: 1.9rem; }
+      .hero-panel-content p { font-size: 1rem; }
+      .section-title { font-size: 1.8rem; }
+      .about-cards { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+      .pricing-card.featured:hover { transform: translateY(-4px); }
+      .btn-outline, .btn-outline-purple { margin-left: 0; margin-top: 0.8rem; display: inline-block; }
+      .cta-section h2 { font-size: 2rem; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .pain-grid-4 { grid-template-columns: 1fr; }
+      .phases-4 { grid-template-columns: 1fr; }
+      .promise-photo { width: 140px; height: 140px; }
+      .timeline-item { padding-left: 60px; }
+      .timeline::before { left: 18px; }
+      .timeline-dot { left: 6px; width: 24px; height: 24px; font-size: 0.65rem; }
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      z-index: 999;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6); }
+    .whatsapp-float svg { width: 32px; height: 32px; fill: #fff; }
+  </style>
+</head>
+<body class="modo-b2c modo-inicio">
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="logo">Dani <span>Sanabria</span></div>
+    <div class="nav-center">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" onclick="irInicio(); return false;">Inicio</a></li>
+        <li><a href="#que-es" class="nav-talento" onclick="irPropuesta('b2c'); return false;">Soy talento</a></li>
+        <li><a href="#que-es-b2b" class="nav-empresa" onclick="irPropuesta('b2b'); return false;">Soy empresa</a></li>
+        <li><a href="#sobre-mi" onclick="irSobreMi(); return false;">Sobre mí</a></li>
+        <li><a href="#contacto-form" onclick="irContacto(); return false;">Contacto</a></li>
+        <li class="hidden"><a href="pages/para-vos.html">Para vos</a></li>
+        <li class="hidden"><a href="pages/para-tu-empresa.html">Para tu empresa</a></li>
+      </ul>
+    </div>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </nav>
+
+  <!-- ===== HERO SPLIT (B2C | B2B) ===== -->
+  <section class="hero-split" id="inicio">
+    <div class="hero-panel hero-panel-b2c">
+      <div class="hero-panel-images">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=280&fit=crop" alt="Jóvenes profesionales" loading="lazy">
+        <img src="https://lh3.googleusercontent.com/d/1kdg4AHdgjOFUQ_IMMv5uAoiQhOD_dQgm" alt="Mujer joven trabajando" loading="lazy">
+        <img src="https://lh3.googleusercontent.com/d/1cbcC1dG04hC4FLoJzjcVBaWpnriigoMI" alt="Mentoría" loading="lazy">
+      </div>
+      <div class="hero-panel-overlay"></div>
+      <div class="hero-panel-content">
+        <span class="hero-tag">Preparadas para el Match</span>
+        <h1>No se trata de <em>buscar</em> trabajo.<br>Se trata de <em>hacer match</em>.</h1>
+        <p>Una mentoría laboral intensiva para estudiantes y recién graduadas que quieren su primer empleo profesional. Acompañamiento real, práctico y 100% personalizado.</p>
+        <div class="hero-panel-actions">
+          <a href="#contacto-form" class="btn" onclick="irContacto('b2c'); return false;">Quiero hacer match</a>
+          <a href="#que-es" class="btn btn-outline" onclick="irPropuesta('b2c'); return false;">Conocé más</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-panel hero-panel-b2b">
+      <div class="hero-panel-images">
+        <img src="https://lh3.googleusercontent.com/d/1FUV_IYyKSiOYZacBCm_5qLqCIgDXIaTe" alt="Equipo corporativo" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=280&h=200&fit=crop" alt="Reunión de trabajo" loading="lazy">
+        <img src="https://lh3.googleusercontent.com/d/1I-CjnB13MJElkSX2gffAxjKKlafY00xa" alt="Consultora" loading="lazy">
+      </div>
+      <div class="hero-panel-overlay"></div>
+      <div class="hero-panel-content">
+        <span class="hero-tag">Consultoría Organizacional</span>
+        <h1>Construimos las condiciones para que el talento <em>Gen Z</em> elija quedarse en tu empresa.</h1>
+        <p>Mentoría e integración de RRHH especializada en fidelización, cultura intergeneracional y desarrollo para Pymes y Startups.</p>
+        <div class="hero-panel-actions">
+          <a href="#contacto-form" class="btn btn-hero-b2b" onclick="irContacto('b2b'); return false;">Quiero frenar la rotación</a>
+          <a href="#que-es-b2b" class="btn btn-hero-b2b-outline" onclick="irPropuesta('b2b'); return false;">Conocé más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUÉ ES B2C ===== -->
+  <section id="que-es" class="b2c-only">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>¿Qué es <span>Preparadas para el Match</span>?</h2>
+        <p>Es un programa de mentoría laboral intensiva diseñado específicamente para estudiantes universitarias y recién graduadas que buscan su primer empleo profesional o un puesto alineado a su carrera.</p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card"><div class="icon">🎯</div><h4>CV y LinkedIn</h4><p>Optimizamos tus herramientas desde cero para que tu perfil destaque.</p></div>
+        <div class="about-card"><div class="icon">🎤</div><h4>Ensayamos Juntas</h4><p>Simulacros de entrevistas en vivo para ganar confianza y seguridad.</p></div>
+        <div class="about-card"><div class="icon">💡</div><h4>Habilidades Blandas</h4><p>Potenciamos tu comunicación y presencia para equipos modernos.</p></div>
+        <div class="about-card"><div class="icon">🤝</div><h4>Acompañamiento Real</h4><p>Sesiones 1-1 por videollamada con seguimiento continuo.</p></div>
+      </div>
+    </div>
+    <div class="how-works">
+      <div class="how-works-content">
+        <h3 class="section-title pink" style="margin-bottom:1rem;font-size:1.8rem;">¿Cómo funciona?</h3>
+        <p>A través de sesiones 1-1 por videollamada, comenzamos hablando de tus intereses, luego vamos trabajando sobre tu CV y LinkedIn, ensayamos entrevistas dándote confianza para salir a buscar el trabajo que querés. <strong>Mi trabajo es 100% personalizado: en base a un análisis de tu perfil diseño un plan exclusivamente para vos.</strong></p>
+      </div>
+      <img class="how-works-img" src="https://lh3.googleusercontent.com/d/1xyWArpJ8YkZt6cEHD47PbeBuWIBZxgDb" alt="Sesión de mentoría" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===== QUÉ ES B2B ===== -->
+  <section id="que-es-b2b" class="b2b-only">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-tag purple">PROPUESTA CORPORATIVA</span>
+        <h2>Mentoría de RRHH especializada en <span style="color:var(--neon-pink);">talento Gen Z</span></h2>
+        <p>Diseñamos programas a medida para pequeñas y medianas organizaciones que buscan reducir la rotación, fidelizar a su nómina joven y construir una cultura intergeneracional sólida.</p>
+        <p>Trabajamos in-company con observación directa de la dinámica interna, diseñamos políticas integrales de mejora y medimos resultados con KPIs para accionar con propósito.</p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card" style="border-color:rgba(198,240,116,0.2);"><div class="icon">📊</div><h4>Diagnóstico Organizacional</h4><p>Auditoría interna para detectar desvíos y oportunidades de mejora en cada área.</p></div>
+        <div class="about-card" style="border-color:rgba(198,240,116,0.2);"><div class="icon">🎓</div><h4>Escuelita de Líderes</h4><p>Formación de mandos medios jóvenes para potenciar el liderazgo dentro de la organización.</p></div>
+        <div class="about-card" style="border-color:rgba(198,240,116,0.2);"><div class="icon">📈</div><h4>KPIs y Trazabilidad</h4><p>Medición de impacto con indicadores clave de rotación y clima laboral.</p></div>
+        <div class="about-card" style="border-color:rgba(198,240,116,0.2);"><div class="icon">🤝</div><h4>Acompañamiento Continuo</h4><p>Implementación y seguimiento de 3 a 6 meses en modalidad híbrida.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROMISE (siempre visible) ===== -->
+  <div class="promise">
+    <img class="promise-photo" src="https://lh3.googleusercontent.com/d/1RsBT9Stm0CCDd_BqMXRljAKwcPsseWXm" alt="Dani Sanabria">
+    <div>
+      <blockquote class="b2c-only">"No te doy teoría ni recetas de coaching, sino un acompañamiento real y práctico que transforma la ansiedad del inicio en la seguridad necesaria para que hagas match con tu empresa ideal."</blockquote>
+      <blockquote class="b2b-only">"Soy un puente que entiende tanto las necesidades de la empresa como del talento joven. Mi misión es potenciarlos traduciendo las necesidades de ambos en su relación laboral."</blockquote>
+      <cite>— Dani Sanabria</cite>
+    </div>
+  </div>
+
+  <!-- ===== SOBRE MÍ (siempre visible) ===== -->
+  <section id="sobre-mi">
+    <div class="sobre-mi-grid">
+      <img class="sobre-mi-photo" src="https://lh3.googleusercontent.com/d/1RsBT9Stm0CCDd_BqMXRljAKwcPsseWXm" alt="Dani Sanabria">
+      <div class="sobre-mi-text">
+        <span class="section-tag pink">SOBRE MÍ</span>
+        <h2 class="section-title">Daniela Sanabria</h2>
+        <p>Soy Dani Sanabria, especialista en Administración de empresas y RRHH. Durante más de 20 años de experiencia, he pasado por varias empresas y hoy en día desde un lugar de liderazgo como HRBP de 6 equipos compuestos por jóvenes de la generación Z, conozco en profundidad ambos mundos.</p>
+        <p>Como mentora quiero ser el nexo entre los dos para que puedan trabajar entendiéndose unos con otros, y en armonía. Esto tal vez no sea fácil, pero hago un acompañamiento muy personalizado para lograrlo. El match ideal entre el postulante y la empresa es el resultado de un trabajo con un modelo profesional estandarizado.</p>
+        <p>No se trata de que un joven sólo encuentre trabajo, y la empresa solo cubra el puesto de forma urgente. Se trata de que ambos puedan establecer una relación laboral donde estén a gusto, no solo a nivel contraprestación dineraria, eso no es suficiente para ninguno. La empresa necesita fidelidad y el empleado necesita sentirse reconocido, con herramientas para poder llevar adelante su trabajo con creatividad, autonomía y libertad.</p>
+        <p>Mi misión es conectar la Gen Z con las empresas y viceversa. Desde un lado humano y al mismo tiempo profesional, donde ambos puedan convivir para potenciar sus resultados.</p>
+        <p>Mi visión es ser la mentora número 1 a nivel internacional que una estos dos mundos y contribuir a que tanto la inserción y desarrollo de la Gen Z como la adaptación a ellos por parte de la empresa en este mundo laboral con una vorágine tan alta, no sea tan hostil, si no todo lo contrario, que sea una sinergia potenciadora.</p>
+        <a href="#inicio" class="btn" onclick="irInicio(); return false;">Volver</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIAGNÓSTICO B2C ===== -->
+  <section id="diagnostico" class="b2c-only">
+    <span class="section-tag pink">PUNTOS DE DOLOR</span>
+    <h2 class="section-title pink">¿Te sentís identificada?</h2>
+    <p class="section-subtitle">Esto es justo lo que resolvemos juntas en el programa.</p>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="num">1</div><h4>Ambición por aprendizaje</h4><p>No te interesa ser jefa, querés crecer y desarrollar herramientas que te hagan avanzar en tu carrera con propósito.</p></div>
+      <div class="pain-card"><div class="num">2</div><h4>Equilibrio y propósito</h4><p>Buscás un trabajo que se adapte a cómo querés vivir, con balance entre tu vida personal y laboral.</p></div>
+      <div class="pain-card"><div class="num">3</div><h4>Ansiedad y estrés</h4><p>Querés reducir la incertidumbre con un método colaborativo, estructurado y previsible que te acompañe en todo el proceso.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== DIAGNÓSTICO B2B ===== -->
+  <section id="diagnostico-b2b" class="b2b-only">
+    <span class="section-tag purple">DESAFÍOS ORGANIZACIONALES</span>
+    <h2 class="section-title purple">¿Tu empresa sufre estos problemas?</h2>
+    <p class="section-subtitle">Diagnóstico de los 4 puntos críticos que afectan la retención del talento joven.</p>
+    <div class="pain-grid-4">
+      <div class="pain-card purple"><div class="num">1</div><h4>Alta rotación de talento</h4><p>Jóvenes que se aburren rápido, no ven evolución y migran atraídos por otras ofertas en LinkedIn.</p></div>
+      <div class="pain-card purple"><div class="num">2</div><h4>Demanda de equilibrio y propósito</h4><p>El desafío de fidelizar a la nómina joven sin descuidar los objetivos de control de la compañía.</p></div>
+      <div class="pain-card purple"><div class="num">3</div><h4>Actualización de beneficios</h4><p>Necesidad de armar paquetes atractivos para el Gen Z que requieran poca inversión para la empresa.</p></div>
+      <div class="pain-card purple"><div class="num">4</div><h4>Falta de trazabilidad</h4><p>Ausencia de medición de KPIs organizacionales para detectar desvíos y ausentismo a tiempo.</p></div>
+    </div>
+
+    <div class="solucion-macro">
+      <h3>⚡ Estrategia real para equipos estables</h3>
+      <p>Fidelizar al talento joven no exige inversiones gigantescas, exige procesos claros. A través de un diagnóstico profundo y un despliegue in-company, transformamos la rotación temprana en estabilidad laboral. Diseñamos un entorno donde ellos proyectan su carrera mientras tu empresa alcanza sus objetivos de negocio con métricas reales.</p>
+    </div>
+  </section>
+
+  <!-- ===== METODOLOGÍA B2C ===== -->
+  <section id="metodologia" class="b2c-only">
+    <span class="section-tag pink">METODOLOGÍA</span>
+    <h2 class="section-title pink">Metodología</h2>
+    <p class="section-subtitle">Un proceso de 3 fases diseñado para llevarte de la claridad al impacto.</p>
+    <div class="methodology">
+      <div class="phases">
+        <div class="phase"><span class="step pink">FASE 1</span><h4>Claridad y Perfil</h4><p>FODA personal, rediseño de CV y perfil de LinkedIn en base a tus intereses.</p></div>
+        <div class="phase"><span class="step pink">FASE 2</span><h4>Estrategia</h4><p>Te preparamos practicando para tus entrevistas en tiempo real, destacando tus soft y hard skills.</p></div>
+        <div class="phase"><span class="step pink">FASE 3</span><h4>Simulación e Impacto</h4><p>Feedback y seguimiento para pulir áreas de mejora. Acompañamiento post mentoría incluido.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== METODOLOGÍA B2B ===== -->
+  <section id="metodologia-b2b" class="b2b-only">
+    <span class="section-tag purple">METODOLOGÍA CORPORATIVA</span>
+    <h2 class="section-title purple">Metodología de Consultoría</h2>
+    <p class="section-subtitle">Un proceso de 4 fases para transformar la gestión del talento joven en tu empresa.</p>
+    <div class="methodology purple-bg">
+      <span style="display:inline-block;font-weight:700;font-size:0.85rem;color:var(--neon-pink);letter-spacing:0.05em;margin-bottom:1rem;">PROCESO</span>
+      <div class="timeline">
+        <div class="timeline-item open">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-header" onclick="toggleFase(this)">
+            <h4>Fase 1 · Diagnóstico y Auditoría Interna</h4>
+            <span class="timeline-arrow">▾</span>
+          </div>
+          <div class="timeline-body">
+            <p>Relevamiento de datos en las diferentes áreas para entender la dinámica actual, detectar desvíos y oportunidades de mejora en cada departamento.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-header" onclick="toggleFase(this)">
+            <h4>Fase 2 · Diseño de Estructura y Plan de Acción</h4>
+            <span class="timeline-arrow">▾</span>
+          </div>
+          <div class="timeline-body">
+            <p>Políticas de mejora a medida según prioridades de la organización: selección, onboarding, beneficios y retención de talento joven.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-header" onclick="toggleFase(this)">
+            <h4>Fase 3 · Implementación y Capacitación</h4>
+            <span class="timeline-arrow">▾</span>
+          </div>
+          <div class="timeline-body">
+            <p>Diseño y desarrollo de plan de carreras y bandas salariales por área. Capacitación para líderes jóvenes.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-header" onclick="toggleFase(this)">
+            <h4>Fase 4 · Medición de Impacto y Trazabilidad</h4>
+            <span class="timeline-arrow">▾</span>
+          </div>
+          <div class="timeline-body">
+            <p>Seguimiento exhaustivo de KPIs de rendimiento para asegurar resultados medibles en tiempo y dinero, con reportes periódicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ENTREGABLES B2C ===== -->
+  <section class="b2c-only">
+    <span class="section-tag pink">ENTREGABLES</span>
+    <h2 class="section-title pink">¿Qué incluye?</h2>
+    <p class="section-subtitle">Todo lo que necesitás para llegar preparada a tu próxima oportunidad.</p>
+    <div class="deliverables-grid">
+      <div class="deliverable-item"><div class="check">✓</div><div><h4>Formulario de contacto inicial</h4><p>Setamos tu perfil: situación laboral, estudios y expectativas.</p></div></div>
+      <div class="deliverable-item"><div class="check">✓</div><div><h4>Charla de 30 min sin cargo</h4><p>Prospección de perfil y muestra del proceso de trabajo.</p></div></div>
+      <div class="deliverable-item"><div class="check">✓</div><div><h4>Diagnóstico FODA personal</h4><p>1h de meet; a las 48hs te entrego tu FODA para trabajar.</p></div></div>
+      <div class="deliverable-item"><div class="check">✓</div><div><h4>CV optimizado (ES / EN)</h4><p>Currículum editable optimizado para filtros ATS.</p></div></div>
+      <div class="deliverable-item"><div class="check">✓</div><div><h4>Perfil de LinkedIn configurado</h4><p>Palabras clave, alertas y consejos de uso diario.</p></div></div>
+      <div class="deliverable-item"><div class="check">✓</div><div><h4>Grabación de simulacros</h4><p>Sesiones de práctica grabadas para repasar.</p></div></div>
+      <div class="deliverable-item"><div class="check">✓</div><div><h4>Guía para video de postulación</h4><p>Guión específico para postularte con video.</p></div></div>
+      <div class="deliverable-item"><div class="check">✓</div><div><h4>Sesión de seguimiento</h4><p>Un mes de apoyo post mentoría.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===== ENTREGABLES B2B ===== -->
+  <section class="b2b-only">
+    <span class="section-tag purple">ENTREGABLES</span>
+    <h2 class="section-title purple">Entregables de la Consultoría</h2>
+    <p class="section-subtitle">Reportes y manuales tangibles que tu empresa recibe al finalizar.</p>
+    <div class="deliverables-grid">
+      <div class="deliverable-item"><div class="check purple">✓</div><div><h4>Manual de procesos documentado</h4><p>Selección, onboarding, fidelización Gen Z y administración de RRHH documentado y transferible.</p></div></div>
+      <div class="deliverable-item"><div class="check purple">✓</div><div><h4>Reporte de auditoría de clima laboral</h4><p>Consolidado con diagnóstico organizacional y áreas de mejora priorizadas.</p></div></div>
+      <div class="deliverable-item"><div class="check purple">✓</div><div><h4>Reporte analítico de KPIs</h4><p>Indicadores de rotación de talento por área con trazabilidad y recomendaciones.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===== PLANES B2C ===== -->
+  <section id="planes" class="b2c-only">
+    <span class="section-tag pink">INVERSIÓN</span>
+    <h2 class="section-title pink">Elegí tu plan</h2>
+    <p class="section-subtitle">La propuesta que mejor se ajuste a tu momento.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <img class="pricing-card-img" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=160&fit=crop" alt="FODA" loading="lazy">
+        <div class="pricing-card-body">
+          <h4>FODA Completo</h4>
+          <p class="desc">Diagnóstico personal para conocer tus fortalezas.</p>
+          <div class="price">$50.000</div>
+          <p class="price-info">Transferencia o Tarjeta de crédito en 1 pago</p>
+          <p class="price-detail">Un primer paso para empezar a conocerte y determinar un plan de acción</p>
+          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Lo quiero</a>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <img class="pricing-card-img" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=160&fit=crop" alt="CV" loading="lazy">
+        <div class="pricing-card-body">
+          <h4>CV + LinkedIn</h4>
+          <p class="desc">Optimización completa de tu perfil profesional.</p>
+          <div class="price">$150.000</div>
+          <p class="price-info">Transferencia o Tarjeta de crédito en 1 pago</p>
+          <p class="price-detail">CV optimizado en inglés y español. LinkedIn con palabras clave, alertas y consejos de uso diario.</p>
+          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Lo quiero</a>
+        </div>
+      </div>
+      <div class="pricing-card featured">
+        <img class="pricing-card-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=160&fit=crop" alt="Match" loading="lazy">
+        <div class="pricing-card-body">
+          <h4>Preparadas para el Match</h4>
+          <p class="desc">Programa completo de 3 meses.</p>
+          <div class="price">$320.000 <small style="text-decoration:line-through;">($390.000)</small></div>
+          <p class="price-info">20% off efectivo · 3 cuotas de $130.000</p>
+          <p class="price-detail">Entrenamiento completo que incluye todos los módulos y un soporte hasta 60 días después para hacer los ajustes necesarios para que brilles</p>
+          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Quiero hacer match</a>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <img class="pricing-card-img" src="https://lh3.googleusercontent.com/d/1RTgsL4IziVCGLRvdgTRnnYjSw7_ULcD9" alt="Entrevistas" loading="lazy">
+        <div class="pricing-card-body">
+          <h4>Entrenamiento para Entrevistas</h4>
+          <p class="desc">Preparación intensiva para entrevistas.</p>
+          <div class="price">$200.000</div>
+          <p class="price-detail">Te preparo para que puedas abordar las entrevistas con simulacros grabados y feedback personalizado y te acompaño el mes siguiente con seguimiento y apoyo post mentoría.</p>
+          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Lo quiero</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLANES B2B ===== -->
+  <section id="planes-b2b" class="b2b-only">
+    <span class="section-tag purple">INVERSIÓN CORPORATIVA</span>
+    <h2 class="section-title purple">Soluciones para tu empresa</h2>
+    <p class="section-subtitle">Planes a medida según el diagnóstico de tu organización. Duración estimada de 3 a 6 meses bajo modalidad híbrida (In-Company + Home Office).</p>
+    <div class="pricing-grid">
+      <div class="pricing-card b2b-card featured">
+        <img class="pricing-card-img" src="https://lh3.googleusercontent.com/d/1Mn7tKLLApm0-p_-PY8OdiDEFEOm2so9g" alt="Consultoría" loading="lazy">
+        <div class="pricing-card-body">
+          <span class="section-tag purple" style="margin-bottom:0.5rem;display:inline-block;">PROGRAMA COMPLETO</span>
+          <h4>Consultoría en Fidelización Gen Z</h4>
+          <p class="desc">Diagnóstico, diseño, implementación y medición de impacto. Incluye Escuelita de Líderes y manual de procesos.</p>
+          <div class="price-consult">Consultar precio</div>
+          <p class="price-info">Presupuesto personalizado según necesidades de la organización</p>
+          <ul class="b2b-features">
+            <li>Duración: 3 a 6 meses</li>
+            <li>Modalidad híbrida (In-Company + Home Office)</li>
+            <li>Observación directa de dinámica interna</li>
+            <li>KPIs medibles en tiempo y dinero</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn btn-purple" target="_blank">Cotizar solución personalizada</a>
+        </div>
+      </div>
+      <div class="pricing-card b2b-card">
+        <img class="pricing-card-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=160&fit=crop" alt="Auditoría" loading="lazy">
+        <div class="pricing-card-body">
+          <span class="section-tag purple" style="margin-bottom:0.5rem;display:inline-block;">ENTREGABLE</span>
+          <h4>Auditoría de Clima y KPIs</h4>
+          <p class="desc">Reporte consolidado de clima laboral y análisis de rotación por área con recomendaciones.</p>
+          <div class="price-consult">Consultar precio</div>
+          <p class="price-info">Presupuesto a medida</p>
+          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn btn-purple" target="_blank">Cotizar solución personalizada</a>
+        </div>
+      </div>
+      <div class="pricing-card b2b-card">
+        <img class="pricing-card-img" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=160&fit=crop" alt="Capacitación" loading="lazy">
+        <div class="pricing-card-body">
+          <span class="section-tag purple" style="margin-bottom:0.5rem;display:inline-block;">ENTREGABLE</span>
+          <h4>Escuelita de Líderes</h4>
+          <p class="desc">Programa de capacitación para mandos medios jóvenes en liderazgo, comunicación y gestión de equipos.</p>
+          <div class="price-consult">Consultar precio</div>
+          <p class="price-info">Presupuesto a medida</p>
+          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn btn-purple" target="_blank">Cotizar solución personalizada</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIOS ===== -->
+  <section>
+    <span class="section-tag pink">TESTIMONIOS</span>
+    <h2 class="section-title pink b2c-only">Lo que dicen</h2>
+    <h2 class="section-title purple b2b-only">Lo que dicen los líderes</h2>
+    <p class="section-subtitle b2c-only">Mujeres que ya vivieron la experiencia.</p>
+    <p class="section-subtitle b2b-only">Empresas que transformaron su gestión de talento con Dani.</p>
+    <div class="testimonials">
+      <div class="testimonial-card b2c-only"><p>"Dani me ayudó a encontrar claridad en un momento de mucha incertidumbre laboral. Su acompañamiento fue clave para conseguir mi primer empleo."</p><div class="author">— Valentina</div></div>
+      <div class="testimonial-card b2c-only"><p>"Nunca imaginé que preparar un CV podía ser tan estratégico. Las sesiones de práctica de entrevistas me dieron la confianza que necesitaba."</p><div class="author">— Camila</div></div>
+      <div class="testimonial-card b2c-only"><p>"El programa superó mis expectativas. No solo conseguí trabajo, sino que aprendí a valorar mis habilidades y a negociar lo que merezco."</p><div class="author">— Sofía</div></div>
+
+      <div class="testimonial-card b2b-only"><p>"Dani nos ayudó a entender qué busca realmente el talento joven. Redujimos la rotación un 40% en 6 meses. Su mirada externa fue clave para detectar lo que nosotras no veíamos."</p><div class="author">— Carolina Méndez, Directora de RRHH en TechFlow</div></div>
+      <div class="testimonial-card b2b-only"><p>"La escuelita de líderes transformó la forma en que nuestros mandos medios se relacionan con los equipos jóvenes. Hoy tenemos líderes más preparados y equipos más estables."</p><div class="author">— Esteban Rivas, CEO de Grupo Nexo</div></div>
+      <div class="testimonial-card b2b-only"><p>"El diagnóstico organizacional fue un antes y un después. Por primera vez tenemos KPIs claros de clima y rotación. Ahora tomamos decisiones basadas en datos, no en corazonadas."</p><div class="author">— Luciana Paz, Head de People en StartUpCo</div></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="contacto">
+    <div class="cta-section">
+      <h2 class="b2c-only">Empecemos hoy</h2>
+      <h2 class="b2b-only">Transformemos tu organización</h2>
+      <p class="b2c-only">Estás a un paso de transformar la ansiedad del inicio en la seguridad necesaria para hacer match con tu empresa ideal.</p>
+      <p class="b2b-only">Agendá una reunión sin costo para conocer cómo podemos ayudarte a retener y potenciar tu talento joven.</p>
+      <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Quiero mi sesión gratuita</a>
+    </div>
+  </section>
+
+  <!-- ===== FORMULARIO DE CONTACTO ===== -->
+  <section id="contacto-form" class="contact-form-section">
+    <span class="section-tag pink">CONTACTO</span>
+    <h2 class="section-title">Contame tu caso</h2>
+    <p class="section-subtitle">Escribime y te respondo a la brevedad.</p>
+    <form class="contact-form" action="#" method="POST">
+      <label for="form-nombre">Nombre
+        <input type="text" id="form-nombre" name="nombre" placeholder="Tu nombre" required>
+      </label>
+      <label for="form-email">Email
+        <input type="email" id="form-email" name="email" placeholder="tu@email.com" required>
+      </label>
+      <label for="form-segmento">¿Para quién es?
+        <select id="form-segmento" name="segmento">
+          <option value="b2c">Para mí (estudiante o recién graduada)</option>
+          <option value="b2b">Para mi empresa</option>
+        </select>
+      </label>
+      <label for="form-mensaje">Mensaje
+        <textarea id="form-mensaje" name="mensaje" placeholder="Contame brevemente tu situación..." required></textarea>
+      </label>
+      <button type="submit" class="btn">Enviar consulta</button>
+      <p class="contact-form-note">También podés escribirme directo por <a href="https://api.whatsapp.com/send?phone=5491150268149" style="color:var(--neon-lime);">WhatsApp</a>.</p>
+      <a href="#inicio" class="btn btn-outline" onclick="irInicio(); return false;">Volver</a>
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="social">
+      <a href="https://www.instagram.com/danisanabria/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.linkedin.com/in/daniela-sanabria-514a2060/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://api.whatsapp.com/send?phone=5491150268149" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+    <p>© 2026 Dani Sanabria · Mentoría Laboral · Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- ===== POPUP ===== -->
+  <a href="https://api.whatsapp.com/send?phone=5491150268149" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <script>
+    function setModo(modo) {
+      const body = document.body;
+      const isB2B = modo === 'b2b';
+
+      body.classList.remove('modo-b2c', 'modo-b2b');
+      body.classList.add(isB2B ? 'modo-b2b' : 'modo-b2c');
+
+      const btnB2C = document.getElementById('toggleB2C');
+      const btnB2B = document.getElementById('toggleB2B');
+      if (btnB2C) btnB2C.classList.toggle('active', !isB2B);
+      if (btnB2B) btnB2B.classList.toggle('active', isB2B);
+
+      const segmento = document.getElementById('form-segmento');
+      if (segmento) segmento.value = isB2B ? 'b2b' : 'b2c';
+
+      document.getElementById('navLinks').classList.remove('open');
+
+      const hash = isB2B ? '#que-es-b2b' : '#que-es';
+      history.replaceState(null, '', window.location.pathname + hash);
+    }
+
+    document.querySelector('.contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const msg = this.querySelector('#form-mensaje').value;
+      const nombre = this.querySelector('#form-nombre').value;
+      const segmento = this.querySelector('#form-segmento').value;
+      const texto = 'Hola Dani, soy ' + nombre + '. Consulta (' + segmento + '): ' + msg;
+      window.open('https://api.whatsapp.com/send?phone=5491150268149&text=' + encodeURIComponent(texto), '_blank');
+      this.reset();
+    });
+
+    function closeNav() {
+      document.getElementById('navLinks').classList.remove('open');
+    }
+
+    function irPropuesta(modo) {
+      setModo(modo);
+      closeNav();
+      document.body.classList.remove('modo-sobre-mi', 'modo-inicio', 'modo-contacto');
+      document.body.classList.add('modo-propuesta');
+      const hero = document.getElementById('inicio');
+      if (hero) hero.style.display = 'none';
+      const target = modo === 'b2b' ? 'que-es-b2b' : 'que-es';
+      const el = document.getElementById(target);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function irSobreMi() {
+      closeNav();
+      document.body.classList.remove('modo-inicio', 'modo-propuesta', 'modo-contacto');
+      document.body.classList.add('modo-sobre-mi');
+      const hero = document.getElementById('inicio');
+      if (hero) hero.style.display = 'none';
+      const el = document.getElementById('sobre-mi');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function irContacto(modo) {
+      if (modo) setModo(modo);
+      closeNav();
+      document.body.classList.remove('modo-sobre-mi', 'modo-inicio', 'modo-propuesta');
+      document.body.classList.add('modo-contacto');
+      const hero = document.getElementById('inicio');
+      if (hero) hero.style.display = 'none';
+      const el = document.getElementById('contacto-form');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function irInicio() {
+      closeNav();
+      document.body.classList.remove('modo-sobre-mi', 'modo-propuesta', 'modo-contacto');
+      document.body.classList.add('modo-inicio');
+      const hero = document.getElementById('inicio');
+      if (hero) hero.style.display = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', window.location.pathname + '#inicio');
+    }
+
+    function toggleFase(header) {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      item.closest('.timeline').querySelectorAll('.timeline-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>
