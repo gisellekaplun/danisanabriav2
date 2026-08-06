@@ -129,6 +129,7 @@
     }
     .logo { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 1.3rem; color: var(--neon-lime); flex-shrink: 0; }
     .logo span { color: var(--text-main); }
+    .logo .logo-sub { font-style: normal; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); }
 
     .nav-center { display: flex; align-items: center; }
     .nav-links {
@@ -179,14 +180,106 @@
       border: 1px solid rgba(236,81,220,0.2);
     }
 
-    /* Hero Split (B2C | B2B) */
-    .hero-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 100vh;
-      padding-top: 56px;
+    /* Hero Unificado (mensaje puentes) */
+    .inicio-shell { max-width: 100%; padding: 0; margin: 0 auto; scroll-margin-top: 70px; }
+    .hero-unified {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 2rem 60px;
+      position: relative;
+      background: radial-gradient(ellipse at top, rgba(201,160,241,0.12), transparent 55%), radial-gradient(ellipse at bottom right, rgba(198,240,116,0.1), transparent 55%);
+    }
+    .hero-unified-content { max-width: 900px; width: 100%; }
+    .hero-unified-content .hero-tag {
+      background: rgba(201,160,241,0.12);
+      border: 1px solid rgba(201,160,241,0.3);
+    }
+    .hero-unified-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.4rem;
+    }
+    .hero-unified-content h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #c9a0f1 0%, #c6f074 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+    }
+    .hero-unified-content p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Manifiesto */
+    .manifesto {
+      width: 100%;
       max-width: 100%;
       margin: 0 auto;
+      padding: 4rem 2rem;
+      background: rgba(24,17,43,0.55);
+      border: 1px solid var(--glass-border);
+      border-radius: 0;
+      backdrop-filter: blur(12px);
+      text-align: center;
+    }
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 360px) 1fr minmax(220px, 360px);
+      gap: 3rem;
+      align-items: center;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .manifesto-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .manifesto-side img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    }
+    .manifesto p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+    }
+    .manifesto p:last-child { margin-bottom: 0; }
+    .manifesto p strong { color: var(--text-main); }
+    .manifesto-cta {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+    }
+    .manifesto-cta .btn { width: auto; min-width: 320px; }
+
+    /* Hero Split (B2C | B2B) */
+    .hero-split {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+      padding-top: 0;
+      max-width: 100%;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
     }
     .hero-panel {
       position: relative;
@@ -194,19 +287,15 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 4rem 3rem;
+      padding: 3.2rem 2.4rem;
       overflow: hidden;
       text-decoration: none;
       transition: all 0.3s;
     }
-    .hero-panel:hover .hero-panel-images img { transform: scale(1.05); }
+    .hero-panel:hover .hero-panel-images img { transform: scale(1.02); }
     .hero-panel-images {
       position: absolute;
       inset: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 3px;
       z-index: 0;
     }
     .hero-panel-images img {
@@ -215,25 +304,39 @@
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    .hero-panel-images img:first-child { grid-column: 1 / -1; }
     .hero-panel-overlay {
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: linear-gradient(to bottom, rgba(11,8,19,0.55), rgba(11,8,19,0.92));
+      background: linear-gradient(to bottom, rgba(11,8,19,0.35) 0%, rgba(11,8,19,0.6) 45%, rgba(11,8,19,0.94) 100%);
     }
-    .hero-panel-b2c .hero-panel-overlay { background: linear-gradient(to bottom, rgba(236,81,220,0.18), rgba(11,8,19,0.94)); }
-    .hero-panel-b2b .hero-panel-overlay { background: linear-gradient(to bottom, rgba(198,240,116,0.15), rgba(11,8,19,0.94)); }
+    .hero-panel-b2c .hero-panel-overlay { background: linear-gradient(to bottom, rgba(236,81,220,0.08) 0%, rgba(236,81,220,0.14) 40%, rgba(11,8,19,0.94) 100%); }
+    .hero-panel-b2b .hero-panel-overlay { background: linear-gradient(to bottom, rgba(198,240,116,0.06) 0%, rgba(198,240,116,0.12) 40%, rgba(11,8,19,0.94) 100%); }
     .hero-panel-content {
       position: relative;
       z-index: 2;
       max-width: 520px;
+      width: 100%;
+      height: 486px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-panel-text {
+      flex: 0 0 auto;
+      min-height: 342px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
     }
     .hero-panel-content h1 {
-      font-size: 2.6rem;
+      font-size: 2.45rem;
       font-weight: 800;
       line-height: 1.15;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.15rem;
       color: var(--text-main);
     }
     .hero-panel-content h1 em { font-style: normal; color: var(--neon-lime); text-shadow: 0 0 20px rgba(236,81,220,0.3); }
@@ -244,8 +347,8 @@
       margin: 0 auto 2.5rem;
       line-height: 1.7;
     }
-    .hero-panel-b2c .hero-tag { background: rgba(236,81,220,0.15); color: var(--neon-lime); border-color: rgba(236,81,220,0.3); }
-    .hero-panel-b2b .hero-tag { background: rgba(198,240,116,0.15); color: #c6f074; border-color: rgba(198,240,116,0.3); }
+    .hero-panel-b2c .hero-tag { background: rgba(24,17,43,0.72); color: var(--neon-lime); border-color: rgba(236,81,220,0.45); box-shadow: 0 4px 16px rgba(0,0,0,0.45); text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+    .hero-panel-b2b .hero-tag { background: rgba(24,17,43,0.72); color: #c6f074; border-color: rgba(198,240,116,0.45); box-shadow: 0 4px 16px rgba(0,0,0,0.45); text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
     .hero-panel-b2b .hero-panel-content h1 em { color: #c6f074; text-shadow: 0 0 20px rgba(198,240,116,0.3); }
 
     .btn {
@@ -278,11 +381,20 @@
     .hero-panel-actions {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
       gap: 1rem;
+      margin-top: 1.5rem;
     }
-    .hero-panel-actions .btn { margin-left: 0; }
+    .hero-panel-actions .btn {
+      margin-left: 0;
+      width: 250px;
+      padding: 0.9rem 1.25rem;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .btn-outline-purple {
       background: transparent;
       color: var(--neon-pink);
@@ -290,6 +402,8 @@
       margin-left: 1rem;
     }
     .btn-outline-purple:hover { background: rgba(198,240,116,0.08); }
+    .contact-form-back { display: block; width: fit-content; margin-left: 0; margin-bottom: 1.5rem; }
+    .btn-volver { padding: 0.5rem 1.25rem; font-size: 0.8rem; border-radius: 6px; }
 
     /* ===== GRIDS ===== */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -450,6 +564,7 @@
     body.modo-contacto section:not(#contacto-form),
     body.modo-contacto .promise { display: none !important; }
     body.modo-contacto #contacto-form { display: block; }
+    body:not(.modo-contacto) #contacto-form { display: none !important; }
 
     .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
     .deliverable-item {
@@ -542,6 +657,22 @@
       color: var(--text-muted);
     }
     .b2b-features li::before { content: '▸'; color: var(--neon-pink); font-weight: 700; flex-shrink: 0; }
+
+    .b2c-features {
+      list-style: none;
+      margin: 1.2rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .b2c-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .b2c-features li::before { content: '✓'; color: var(--neon-lime); font-weight: 700; flex-shrink: 0; }
 
     .testimonials { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
 
@@ -733,6 +864,10 @@
     }
     .how-works-content { flex: 1; }
     .how-works p { color: var(--text-muted); font-size: 1.05rem; max-width: 800px; }
+    .how-works-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; max-width: 800px; }
+    .how-works-list li { display: flex; gap: 0.8rem; align-items: flex-start; color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
+    .how-works-list li::before { content: '✓'; flex-shrink: 0; color: var(--neon-lime); font-weight: 800; margin-top: 0.15rem; }
+    .how-works-list strong { color: var(--text-main); }
     .how-works-img {
       width: 280px;
       height: 200px;
@@ -753,8 +888,13 @@
     }
 
     /* ===== RESPONSIVE ===== */
+    @media (max-height: 720px) {
+      .hero-panel-content { height: auto; }
+      .hero-panel-text { flex: 0 0 auto; min-height: 0; }
+    }
     @media (max-width: 1024px) {
       .hero-split { grid-template-columns: 1fr 1fr; }
+      .hero-unified-content h1 { font-size: 2.8rem; }
       .hero-panel-content h1 { font-size: 2.2rem; }
       .hero-panel { padding: 3rem 2rem; }
     }
@@ -787,8 +927,17 @@
         border-bottom: 1px solid var(--glass-border);
       }
       section { padding: 3rem 1.2rem; }
-      .hero-split { grid-template-columns: 1fr; padding-top: 96px; }
+      .hero-split { grid-template-columns: 1fr; padding-top: 0; border-radius: 14px; margin: 0; }
+      .hero-unified { padding: 96px 1.5rem 40px; min-height: auto; }
+      .hero-unified-content h1 { font-size: 2.1rem; }
+      .hero-unified-content p { font-size: 1rem; }
+      .manifesto { padding: 2.5rem 1.5rem; }
+      .manifesto-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .manifesto-side img { max-width: 220px; }
+      .manifesto-cta .btn { min-width: 0; width: 100%; }
       .hero-panel { padding: 3rem 1.5rem; min-height: 70vh; }
+      .hero-panel-content { height: auto; }
+      .hero-panel-text { flex: 0 0 auto; min-height: 0; }
       .hero-panel-content h1 { font-size: 1.9rem; }
       .hero-panel-content p { font-size: 1rem; }
       .section-title { font-size: 1.8rem; }
@@ -829,7 +978,7 @@
 
   <!-- ===== NAV ===== -->
   <nav>
-    <div class="logo">Dani <span>Sanabria</span></div>
+    <div class="logo">Dani <span>Sanabria</span> <em class="logo-sub">| Mentoría laboral</em></div>
     <div class="nav-center">
       <ul class="nav-links" id="navLinks">
         <li><a href="#inicio" onclick="irInicio(); return false;">Inicio</a></li>
@@ -844,40 +993,67 @@
     <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
   </nav>
 
-  <!-- ===== HERO SPLIT (B2C | B2B) ===== -->
-  <section class="hero-split" id="inicio">
-    <div class="hero-panel hero-panel-b2c">
-      <div class="hero-panel-images">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=280&fit=crop" alt="Jóvenes profesionales" loading="lazy">
-        <img src="https://lh3.googleusercontent.com/d/1kdg4AHdgjOFUQ_IMMv5uAoiQhOD_dQgm" alt="Mujer joven trabajando" loading="lazy">
-        <img src="https://lh3.googleusercontent.com/d/1cbcC1dG04hC4FLoJzjcVBaWpnriigoMI" alt="Mentoría" loading="lazy">
+  <!-- ===== HERO (unificado + split B2C | B2B) ===== -->
+  <section id="inicio" class="inicio-shell">
+    <div class="hero-unified">
+      <div class="hero-unified-content">
+        <span class="hero-tag">Construyendo puentes que conectan</span>
+        <h1>Ni el mundo corporativo <em>perdió el rumbo</em>, ni el talento joven <em>es inestable</em>.</h1>
+        <p>Ambos buscan crecer, pero desde expectativas distintas. Desde mi experiencia y mi trabajo diario conecto ambas miradas para transformar esa brecha en estabilidad, compromiso y crecimiento mutuo.</p>
       </div>
-      <div class="hero-panel-overlay"></div>
-      <div class="hero-panel-content">
-        <span class="hero-tag">Preparadas para el Match</span>
-        <h1>No se trata de <em>buscar</em> trabajo.<br>Se trata de <em>hacer match</em>.</h1>
-        <p>Una mentoría laboral intensiva para estudiantes y recién graduadas que quieren su primer empleo profesional. Acompañamiento real, práctico y 100% personalizado.</p>
-        <div class="hero-panel-actions">
-          <a href="#contacto-form" class="btn" onclick="irContacto('b2c'); return false;">Quiero hacer match</a>
-          <a href="#que-es" class="btn btn-outline" onclick="irPropuesta('b2c'); return false;">Conocé más</a>
+    </div>
+    <div class="hero-split">
+      <div class="hero-panel hero-panel-b2c">
+        <div class="hero-panel-images">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=900&fit=crop" alt="Jóvenes profesionales" loading="lazy">
+        </div>
+        <div class="hero-panel-overlay"></div>
+        <div class="hero-panel-content">
+          <div class="hero-panel-text">
+            <span class="hero-tag">Tu propio camino</span>
+            <h1>Tu camino profesional puede tener un <em>equilibrio</em> con la vida que querés llevar.</h1>
+            <p>Una mentoría laboral intensiva para estudiantes y recién graduadas que quieren su primer empleo profesional. Acompañamiento integral, práctico y personalizado.</p>
+          </div>
+          <div class="hero-panel-actions">
+            <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Quiero empezar mi camino</a>
+            <a href="#que-es" class="btn btn-outline" onclick="irPropuesta('b2c'); return false;">Conocé más</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-panel hero-panel-b2b">
+        <div class="hero-panel-images">
+          <img src="https://lh3.googleusercontent.com/d/1FUV_IYyKSiOYZacBCm_5qLqCIgDXIaTe" alt="Equipo corporativo" loading="lazy">
+        </div>
+        <div class="hero-panel-overlay"></div>
+        <div class="hero-panel-content">
+          <div class="hero-panel-text">
+            <span class="hero-tag">Consultoría Organizacional</span>
+            <h1>Construimos las condiciones para que el talento <em>Gen Z</em> elija quedarse en tu empresa.</h1>
+            <p>Mentoría e integración de RRHH especializada en fidelización, cultura intergeneracional y desarrollo para Pymes y Startups.</p>
+          </div>
+          <div class="hero-panel-actions">
+            <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn btn-hero-b2b" target="_blank">Quiero transformar mi empresa</a>
+            <a href="#que-es-b2b" class="btn btn-hero-b2b-outline" onclick="irPropuesta('b2b'); return false;">Conocé más</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="hero-panel hero-panel-b2b">
-      <div class="hero-panel-images">
-        <img src="https://lh3.googleusercontent.com/d/1FUV_IYyKSiOYZacBCm_5qLqCIgDXIaTe" alt="Equipo corporativo" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=280&h=200&fit=crop" alt="Reunión de trabajo" loading="lazy">
-        <img src="https://lh3.googleusercontent.com/d/1I-CjnB13MJElkSX2gffAxjKKlafY00xa" alt="Consultora" loading="lazy">
-      </div>
-      <div class="hero-panel-overlay"></div>
-      <div class="hero-panel-content">
-        <span class="hero-tag">Consultoría Organizacional</span>
-        <h1>Construimos las condiciones para que el talento <em>Gen Z</em> elija quedarse en tu empresa.</h1>
-        <p>Mentoría e integración de RRHH especializada en fidelización, cultura intergeneracional y desarrollo para Pymes y Startups.</p>
-        <div class="hero-panel-actions">
-          <a href="#contacto-form" class="btn btn-hero-b2b" onclick="irContacto('b2b'); return false;">Quiero frenar la rotación</a>
-          <a href="#que-es-b2b" class="btn btn-hero-b2b-outline" onclick="irPropuesta('b2b'); return false;">Conocé más</a>
+    <div class="manifesto">
+      <span class="section-tag pink">CONSTRUYENDO PUENTES QUE CONECTAN</span>
+      <div class="manifesto-grid">
+        <div class="manifesto-side manifesto-side-left">
+          <img src="img/manifiesto-b2c.png" alt="Mentoría para talento" loading="lazy">
         </div>
+        <div class="manifesto-text">
+          <p>El mercado laboral no necesita más etiquetas, necesita <strong>integración</strong>. La estructura y el rigor corporativo no son opuestos a la flexibilidad y el propósito que busca el talento joven: son complementarios.</p>
+          <p>Mi trabajo consiste en <strong>entrelazar</strong> ambas realidades. Siendo un <strong>puente</strong> para que las empresas retengan talento clave y los profesionales encuentren un canal de desarrollo auténtico, convirtiendo la diversidad generacional en una ventaja competitiva.</p>
+        </div>
+        <div class="manifesto-side manifesto-side-right">
+          <img src="img/manifiesto-b2b.png" alt="Consultoría para empresas" loading="lazy">
+        </div>
+      </div>
+      <div class="manifesto-cta">
+        <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Agendar una reunión de diagnóstico sin cargo</a>
       </div>
     </div>
   </section>
@@ -886,20 +1062,24 @@
   <section id="que-es" class="b2c-only">
     <div class="about-grid">
       <div class="about-text">
-        <h2>¿Qué es <span>Preparadas para el Match</span>?</h2>
-        <p>Es un programa de mentoría laboral intensiva diseñado específicamente para estudiantes universitarias y recién graduadas que buscan su primer empleo profesional o un puesto alineado a su carrera.</p>
+        <h2>¿Qué es <span>Tu propio camino</span>?</h2>
+        <p><strong>POV:</strong> Buscás tu primer empleo profesional.<br><strong>POV:</strong> Querés cambiar de trabajo.<br><strong>POV:</strong> Sentís que no crecés donde estás.<br><br>Sea cual sea el tuyo, te acompaño a construir el puente hacia el próximo paso.</p>
       </div>
       <div class="about-cards">
         <div class="about-card"><div class="icon">🎯</div><h4>CV y LinkedIn</h4><p>Optimizamos tus herramientas desde cero para que tu perfil destaque.</p></div>
         <div class="about-card"><div class="icon">🎤</div><h4>Ensayamos Juntas</h4><p>Simulacros de entrevistas en vivo para ganar confianza y seguridad.</p></div>
         <div class="about-card"><div class="icon">💡</div><h4>Habilidades Blandas</h4><p>Potenciamos tu comunicación y presencia para equipos modernos.</p></div>
-        <div class="about-card"><div class="icon">🤝</div><h4>Acompañamiento Real</h4><p>Sesiones 1-1 por videollamada con seguimiento continuo.</p></div>
+        <div class="about-card"><div class="icon">🤝</div><h4>Acompañamiento Real</h4><p>Sesiones 1:1 por videollamada con seguimiento continuo.</p></div>
       </div>
     </div>
     <div class="how-works">
       <div class="how-works-content">
         <h3 class="section-title pink" style="margin-bottom:1rem;font-size:1.8rem;">¿Cómo funciona?</h3>
-        <p>A través de sesiones 1-1 por videollamada, comenzamos hablando de tus intereses, luego vamos trabajando sobre tu CV y LinkedIn, ensayamos entrevistas dándote confianza para salir a buscar el trabajo que querés. <strong>Mi trabajo es 100% personalizado: en base a un análisis de tu perfil diseño un plan exclusivamente para vos.</strong></p>
+        <ul class="how-works-list">
+          <li><strong>Analizamos:</strong> Sesiones 1:1 por videollamada para diseñar un plan 100% a tu medida según tus metas.</li>
+          <li><strong>Optimizamos:</strong> Transformamos tu CV y LinkedIn para que destaquen en el mercado laboral.</li>
+          <li><strong>Entrenamos:</strong> Simulamos entrevistas reales para que salgas a postularte con total confianza.</li>
+        </ul>
       </div>
       <img class="how-works-img" src="https://lh3.googleusercontent.com/d/1xyWArpJ8YkZt6cEHD47PbeBuWIBZxgDb" alt="Sesión de mentoría" loading="lazy">
     </div>
@@ -927,7 +1107,7 @@
   <div class="promise">
     <img class="promise-photo" src="https://lh3.googleusercontent.com/d/1RsBT9Stm0CCDd_BqMXRljAKwcPsseWXm" alt="Dani Sanabria">
     <div>
-      <blockquote class="b2c-only">"No te doy teoría ni recetas de coaching, sino un acompañamiento real y práctico que transforma la ansiedad del inicio en la seguridad necesaria para que hagas match con tu empresa ideal."</blockquote>
+      <blockquote class="b2c-only">"Soy el puente entre tu potencial y el trabajo que tanto deseas, y la brújula que te ayuda a no perder el rumbo en el camino."</blockquote>
       <blockquote class="b2b-only">"Soy un puente que entiende tanto las necesidades de la empresa como del talento joven. Mi misión es potenciarlos traduciendo las necesidades de ambos en su relación laboral."</blockquote>
       <cite>— Dani Sanabria</cite>
     </div>
@@ -945,7 +1125,7 @@
         <p>No se trata de que un joven sólo encuentre trabajo, y la empresa solo cubra el puesto de forma urgente. Se trata de que ambos puedan establecer una relación laboral donde estén a gusto, no solo a nivel contraprestación dineraria, eso no es suficiente para ninguno. La empresa necesita fidelidad y el empleado necesita sentirse reconocido, con herramientas para poder llevar adelante su trabajo con creatividad, autonomía y libertad.</p>
         <p>Mi misión es conectar la Gen Z con las empresas y viceversa. Desde un lado humano y al mismo tiempo profesional, donde ambos puedan convivir para potenciar sus resultados.</p>
         <p>Mi visión es ser la mentora número 1 a nivel internacional que una estos dos mundos y contribuir a que tanto la inserción y desarrollo de la Gen Z como la adaptación a ellos por parte de la empresa en este mundo laboral con una vorágine tan alta, no sea tan hostil, si no todo lo contrario, que sea una sinergia potenciadora.</p>
-        <a href="#inicio" class="btn" onclick="irInicio(); return false;">Volver</a>
+        <a href="#inicio" class="btn btn-volver" onclick="irInicio(); return false;">Volver</a>
       </div>
     </div>
   </section>
@@ -984,12 +1164,12 @@
   <section id="metodologia" class="b2c-only">
     <span class="section-tag pink">METODOLOGÍA</span>
     <h2 class="section-title pink">Metodología</h2>
-    <p class="section-subtitle">Un proceso de 3 fases diseñado para llevarte de la claridad al impacto.</p>
+    <p class="section-subtitle">Un camino de 3 fases diseñado para llevarte de la claridad al impacto.</p>
     <div class="methodology">
       <div class="phases">
-        <div class="phase"><span class="step pink">FASE 1</span><h4>Claridad y Perfil</h4><p>FODA personal, rediseño de CV y perfil de LinkedIn en base a tus intereses.</p></div>
-        <div class="phase"><span class="step pink">FASE 2</span><h4>Estrategia</h4><p>Te preparamos practicando para tus entrevistas en tiempo real, destacando tus soft y hard skills.</p></div>
-        <div class="phase"><span class="step pink">FASE 3</span><h4>Simulación e Impacto</h4><p>Feedback y seguimiento para pulir áreas de mejora. Acompañamiento post mentoría incluido.</p></div>
+        <div class="phase"><span class="step pink">1</span><h4>Claridad y rumbo</h4><p>FODA personal, rediseño de CV y LinkedIn en base a tus intereses - y sobre todo, hacia dónde querés ir.</p></div>
+        <div class="phase"><span class="step pink">2</span><h4>Estrategia y cruce</h4><p>Te preparamos practicando entrevistas en tiempo real, destacando tus soft y hard skills para cruzar con confianza.</p></div>
+        <div class="phase"><span class="step pink">3</span><h4>Impacto y camino propio</h4><p>Feedback y seguimiento para pulir áreas de mejora. Acompañamiento post mentoría incluido.</p></div>
       </div>
     </div>
   </section>
@@ -1082,46 +1262,57 @@
     <p class="section-subtitle">La propuesta que mejor se ajuste a tu momento.</p>
     <div class="pricing-grid">
       <div class="pricing-card">
-        <img class="pricing-card-img" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=160&fit=crop" alt="FODA" loading="lazy">
+        <img class="pricing-card-img" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=160&fit=crop" alt="Diagnóstico inicial" loading="lazy">
         <div class="pricing-card-body">
-          <h4>FODA Completo</h4>
-          <p class="desc">Diagnóstico personal para conocer tus fortalezas.</p>
-          <div class="price">$50.000</div>
-          <p class="price-info">Transferencia o Tarjeta de crédito en 1 pago</p>
-          <p class="price-detail">Un primer paso para empezar a conocerte y determinar un plan de acción</p>
+          <span class="section-tag pink" style="margin-bottom:0.5rem;display:inline-block;">ETAPA 1</span>
+          <h4>Brújula</h4>
+          <p class="desc">Encontrá tu rumbo. Diagnóstico personal y cimientos de tu perfil profesional.</p>
+          <div class="price">$150.000</div>
+          <p class="price-info">Contado o transferencia · 3 cuotas de $60.000</p>
+          <ul class="b2c-features">
+            <li>Videollamada de 45' de diagnóstico inicial</li>
+            <li>Punto de partida (FODA) · Entregable en PDF</li>
+            <li>CV en español y en inglés</li>
+            <li>LinkedIn básico</li>
+          </ul>
           <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Lo quiero</a>
         </div>
       </div>
       <div class="pricing-card">
         <img class="pricing-card-img" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=160&fit=crop" alt="CV" loading="lazy">
         <div class="pricing-card-body">
-          <h4>CV + LinkedIn</h4>
-          <p class="desc">Optimización completa de tu perfil profesional.</p>
-          <div class="price">$150.000</div>
-          <p class="price-info">Transferencia o Tarjeta de crédito en 1 pago</p>
-          <p class="price-detail">CV optimizado en inglés y español. LinkedIn con palabras clave, alertas y consejos de uso diario.</p>
+          <span class="section-tag pink" style="margin-bottom:0.5rem;display:inline-block;">ETAPA 2</span>
+          <h4>Puente</h4>
+          <p class="desc">Cruzá preparada. Sumá la práctica que te faltaba para tus entrevistas.</p>
+          <div class="price">$230.000</div>
+          <p class="price-info">Contado o transferencia · 3 cuotas de $92.000</p>
+          <ul class="b2c-features">
+            <li>Videollamada de 45' de diagnóstico inicial</li>
+            <li>Punto de partida (FODA) · Entregable en PDF</li>
+            <li>CV en español y en inglés</li>
+            <li>LinkedIn básico</li>
+            <li>2 Asesorías 1:1 de simulacros para entrevistas con feedback · Entregable en PDF</li>
+          </ul>
           <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Lo quiero</a>
         </div>
       </div>
       <div class="pricing-card featured">
         <img class="pricing-card-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=160&fit=crop" alt="Match" loading="lazy">
         <div class="pricing-card-body">
-          <h4>Preparadas para el Match</h4>
-          <p class="desc">Programa completo de 3 meses.</p>
-          <div class="price">$320.000 <small style="text-decoration:line-through;">($390.000)</small></div>
-          <p class="price-info">20% off efectivo · 3 cuotas de $130.000</p>
-          <p class="price-detail">Entrenamiento completo que incluye todos los módulos y un soporte hasta 60 días después para hacer los ajustes necesarios para que brilles</p>
-          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Quiero hacer match</a>
-        </div>
-      </div>
-      <div class="pricing-card">
-        <img class="pricing-card-img" src="https://lh3.googleusercontent.com/d/1RTgsL4IziVCGLRvdgTRnnYjSw7_ULcD9" alt="Entrevistas" loading="lazy">
-        <div class="pricing-card-body">
-          <h4>Entrenamiento para Entrevistas</h4>
-          <p class="desc">Preparación intensiva para entrevistas.</p>
-          <div class="price">$200.000</div>
-          <p class="price-detail">Te preparo para que puedas abordar las entrevistas con simulacros grabados y feedback personalizado y te acompaño el mes siguiente con seguimiento y apoyo post mentoría.</p>
-          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Lo quiero</a>
+          <span class="section-tag pink" style="margin-bottom:0.5rem;display:inline-block;">ETAPA 3</span>
+          <h4>Tu propio camino</h4>
+          <p class="desc">Llegá con confianza. El programa completo con acompañamiento on demand.</p>
+          <div class="price">$300.000</div>
+          <p class="price-info">Contado o transferencia · 3 cuotas de $110.000</p>
+          <ul class="b2c-features">
+            <li>Videollamada de 45' de diagnóstico inicial</li>
+            <li>Punto de partida (FODA) · Entregable en PDF</li>
+            <li>CV en español y en inglés</li>
+            <li>LinkedIn básico</li>
+            <li>2 Asesorías 1:1 de simulacros para entrevistas con feedback · Entregable en PDF</li>
+            <li>Mentoría Plus: 2 Asesorías 1:1 on demand</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Quiero empezar mi camino</a>
         </div>
       </div>
     </div>
@@ -1206,6 +1397,7 @@
 
   <!-- ===== FORMULARIO DE CONTACTO ===== -->
   <section id="contacto-form" class="contact-form-section">
+    <a href="#inicio" class="btn btn-outline contact-form-back btn-volver" onclick="irInicio(); return false;">Volver</a>
     <span class="section-tag pink">CONTACTO</span>
     <h2 class="section-title">Contame tu caso</h2>
     <p class="section-subtitle">Escribime y te respondo a la brevedad.</p>
@@ -1227,7 +1419,6 @@
       </label>
       <button type="submit" class="btn">Enviar consulta</button>
       <p class="contact-form-note">También podés escribirme directo por <a href="https://api.whatsapp.com/send?phone=5491150268149" style="color:var(--neon-lime);">WhatsApp</a>.</p>
-      <a href="#inicio" class="btn btn-outline" onclick="irInicio(); return false;">Volver</a>
     </form>
   </section>
 
@@ -1315,6 +1506,7 @@
     }
 
     function irInicio() {
+      setModo('b2c');
       closeNav();
       document.body.classList.remove('modo-sobre-mi', 'modo-propuesta', 'modo-contacto');
       document.body.classList.add('modo-inicio');
