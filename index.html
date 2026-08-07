@@ -568,17 +568,27 @@
       display: grid;
       grid-template-columns: 280px 1fr;
       gap: 3rem;
-      align-items: start;
+      align-items: stretch;
     }
     .sobre-mi-photo {
-      width: 260px; height: 260px;
-      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
       object-fit: cover;
-      border: 4px solid var(--neon-lime);
-      box-shadow: 0 0 20px rgba(236,81,220,0.2);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
       margin: 0 auto;
     }
     .sobre-mi-text p { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7; }
+    .sobre-mi-sub {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--neon-lime);
+      margin: 1.6rem 0 0.5rem;
+    }
+    .sobre-mi-sub:first-of-type { margin-top: 0; }
     body.modo-sobre-mi section:not(#sobre-mi),
     body.modo-sobre-mi .promise { display: none !important; }
     body.modo-sobre-mi #sobre-mi { display: block; }
@@ -925,6 +935,7 @@
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .sobre-mi-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .sobre-mi-photo { width: 100%; max-width: 420px; height: 380px; margin: 0 auto; }
       .pain-grid { grid-template-columns: 1fr; }
       .pain-grid-4 { grid-template-columns: 1fr; }
       .phases { grid-template-columns: 1fr; }
@@ -1070,7 +1081,7 @@
         </div>
         <div class="manifesto-text">
           <p>El mercado laboral no necesita más etiquetas, necesita <strong>integración</strong>. La estructura y el rigor corporativo no son opuestos a la flexibilidad y el propósito que busca el talento joven: son complementarios.</p>
-          <p>Mi trabajo consiste en <strong>entrelazar</strong> ambas realidades. Siendo un <strong>puente</strong> para que las empresas retengan talento clave y los profesionales encuentren un canal de desarrollo auténtico, convirtiendo la diversidad generacional en una ventaja competitiva.</p>
+          <p>Mi trabajo consiste en entrelazar ambas realidades. Siendo un <strong>puente</strong> para que las empresas retengan talento clave y los profesionales encuentren un canal de desarrollo auténtico, convirtiendo la diversidad generacional en una ventaja competitiva.</p>
         </div>
         <div class="manifesto-side manifesto-side-right">
           <img src="manifiesto-b2b.png" alt="Consultoría para empresas" loading="lazy">
@@ -1144,11 +1155,12 @@
       <div class="sobre-mi-text">
         <span class="section-tag pink">SOBRE MÍ</span>
         <h2 class="section-title">Daniela Sanabria</h2>
-        <p>Soy Dani Sanabria, especialista en Administración de empresas y RRHH. Durante más de 20 años de experiencia, he pasado por varias empresas y hoy en día desde un lugar de liderazgo como HRBP de 6 equipos compuestos por jóvenes de la generación Z, conozco en profundidad ambos mundos.</p>
-        <p>Como mentora quiero ser el nexo entre los dos para que puedan trabajar entendiéndose unos con otros, y en armonía. Esto tal vez no sea fácil, pero hago un acompañamiento muy personalizado para lograrlo. El match ideal entre el postulante y la empresa es el resultado de un trabajo con un modelo profesional estandarizado.</p>
-        <p>No se trata de que un joven sólo encuentre trabajo, y la empresa solo cubra el puesto de forma urgente. Se trata de que ambos puedan establecer una relación laboral donde estén a gusto, no solo a nivel contraprestación dineraria, eso no es suficiente para ninguno. La empresa necesita fidelidad y el empleado necesita sentirse reconocido, con herramientas para poder llevar adelante su trabajo con creatividad, autonomía y libertad.</p>
-        <p>Mi misión es conectar la Gen Z con las empresas y viceversa. Desde un lado humano y al mismo tiempo profesional, donde ambos puedan convivir para potenciar sus resultados.</p>
-        <p>Mi visión es ser la mentora número 1 a nivel internacional que una estos dos mundos y contribuir a que tanto la inserción y desarrollo de la Gen Z como la adaptación a ellos por parte de la empresa en este mundo laboral con una vorágine tan alta, no sea tan hostil, si no todo lo contrario, que sea una sinergia potenciadora.</p>
+        <h3 class="sobre-mi-sub">Sobre mí</h3>
+        <p>Soy Dani Sanabria, especialista en Administración y RRHH. Con más de 20 años de trayectoria corporativa y mi rol actual como HRBP liderando equipos de talento joven, conozco en profundidad la realidad de ambos mundos.</p>
+        <h3 class="sobre-mi-sub">Mi diferencial</h3>
+        <p>Como mentora, acompaño de forma personalizada para que empresas y profesionales establezcan relaciones laborales sólidas. No busco cubrir puestos de urgencia ni conseguir empleos pasajeros, sino crear un encaje profesional estandarizado donde la empresa gane fidelidad y el joven encuentre autonomía, creatividad y reconocimiento.</p>
+        <h3 class="sobre-mi-sub">Misión y visión</h3>
+        <p>Mi misión es conectar a las nuevas generaciones con el mundo corporativo desde una mirada humana y estratégica. Aspiro a ser la mentora referente a nivel internacional en transformar la brecha laboral en una sinergia potenciadora para ambas partes.</p>
         <a href="#inicio" class="btn btn-volver" onclick="irInicio(); return false;">Volver</a>
       </div>
     </div>
