@@ -147,6 +147,82 @@
     .nav-talento:hover, .nav-empresa:hover { color: var(--text-main) !important; }
     .hidden { display: none !important; }
 
+    /* ===== MEGA MENU ===== */
+    .nav-item.has-mega { position: relative; }
+    .nav-item.has-mega::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 16px; }
+    .nav-trigger { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .nav-caret { font-size: 0.65rem; opacity: 0.6; transition: transform 0.3s ease, opacity 0.3s ease; }
+    .nav-item.has-mega:hover .nav-caret { transform: rotate(180deg); opacity: 1; }
+
+    .mega-panel {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: min(310px, calc(100vw - 120px));
+      transform: translateX(-50%) translateY(10px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      background: rgba(15, 11, 26, 0.97);
+      backdrop-filter: blur(22px);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55);
+      padding: 1.7rem 1.9rem;
+      transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+    }
+    .nav-item.has-mega:hover .mega-panel,
+    .nav-item.has-mega:focus-within .mega-panel {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .mega-inner { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 1.7rem; align-items: start; }
+    .mega-col { display: flex; flex-direction: column; min-width: 0; }
+    .mega-eyebrow { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .mega-talento .mega-eyebrow { color: #c9a0f1; }
+    .mega-empresa .mega-eyebrow { color: #c6f074; }
+    .mega-col h4 { font-size: 1.12rem; margin: 0 0 0.5rem; line-height: 1.25; }
+    .mega-col > p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.55; margin: 0 0 0.9rem; }
+    .mega-label { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.6rem; }
+    .mega-panel .mega-link {
+      display: flex; flex-direction: column; gap: 0.12rem;
+      padding: 0.55rem 0.75rem; margin: 0 -0.75rem;
+      border-radius: 12px; color: var(--text-main);
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+    .mega-panel .mega-link:hover { background: rgba(255, 255, 255, 0.055); transform: translateX(4px); }
+    .mega-panel .mega-link strong { font-size: 0.86rem; font-weight: 700; display: flex; align-items: center; gap: 0.45rem; color: var(--text-main); }
+    .mega-panel .mega-link strong .arrow { margin-left: auto; opacity: 0; transform: translateX(-4px); transition: opacity 0.25s ease, transform 0.25s ease; }
+    .mega-panel .mega-link:hover strong .arrow { opacity: 1; transform: translateX(0); }
+    .mega-panel .mega-link small { font-size: 0.74rem; color: var(--text-muted); line-height: 1.4; }
+    .mega-divider { border: 0; border-top: 1px solid var(--glass-border); margin: 0.3rem 0 0.5rem; }
+    .mega-panel .mega-cta { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 800; font-size: 0.86rem; padding: 0.2rem 0; margin-top: 0.3rem; transition: gap 0.25s ease; }
+    .mega-panel .mega-cta:hover { gap: 0.7rem; }
+    .mega-panel .mega-link-cta { padding: 0.4rem 0.75rem; margin-top: 0.1rem; }
+    .mega-talento .mega-cta, .mega-talento .mega-link-cta strong { color: #c9a0f1; }
+    .mega-empresa .mega-cta, .mega-empresa .mega-link-cta strong { color: #c6f074; }
+    .mega-talento { border-top: 3px solid #c9a0f1; }
+    .mega-empresa { border-top: 3px solid #c6f074; }
+
+    .mega-mini-grid { display: grid; grid-template-columns: 1fr; gap: 0.7rem; }
+    .mega-mini {
+      display: flex; align-items: center;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    .mega-mini strong { font-size: 0.92rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 0.45rem; width: 100%; line-height: 1.3; }
+    .mega-mini strong .arrow { margin-left: auto; opacity: 0; transform: translateX(-4px); transition: opacity 0.25s ease, transform 0.25s ease; color: #c9a0f1; }
+    .mega-mini:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(201, 160, 241, 0.45); transform: translateY(-2px); }
+    .mega-mini:hover strong .arrow { opacity: 1; transform: translateX(0); }
+    .mega-empresa .mega-mini strong .arrow { color: #c6f074; }
+    .mega-empresa .mega-mini:hover { border-color: rgba(198, 240, 116, 0.45); }
+    #como-funciona { scroll-margin-top: 100px; }
+
     .menu-toggle { display: none; background: none; border: none; color: var(--text-main); font-size: 1.5rem; cursor: pointer; }
 
     /* ===== SECTIONS ===== */
@@ -275,7 +351,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 1.2rem;
       min-height: 58vh;
-      padding-top: 0;
+      padding: 1cm 0;
       max-width: 960px;
       margin: 0 auto;
     }
@@ -355,8 +431,8 @@
     }
     .hero-panel-b2c .hero-panel-content h1 { color: #1a1023; }
     .hero-panel-b2b .hero-panel-content h1 { color: #10240a; }
-    .hero-panel-b2c .hero-panel-content h1 em { color: #ffffff; text-shadow: 0 2px 10px rgba(26,16,35,0.45); }
-    .hero-panel-b2b .hero-panel-content h1 em { color: #ffffff; text-shadow: 0 2px 10px rgba(16,36,10,0.45); }
+    .hero-panel-b2c .hero-panel-content h1 em { color: #ffffff; text-shadow: none; }
+    .hero-panel-b2b .hero-panel-content h1 em { color: #ffffff; text-shadow: none; }
     .hero-panel-b2c .hero-panel-content p { color: #3d2b52; }
     .hero-panel-b2b .hero-panel-content p { color: #27411c; }
     .hero-panel-content .hero-tag { margin-bottom: 0.9rem; }
@@ -433,6 +509,12 @@
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .about-text h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--text-main); }
     .about-text h2 span { color: var(--neon-lime); }
+    .about-text .about-sub {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: -0.8rem 0 1.5rem;
+    }
     .about-text p { color: var(--text-muted); margin-bottom: 1rem; font-size: 1.05rem; }
     .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .about-card {
@@ -448,6 +530,44 @@
     .about-card .icon { font-size: 2rem; margin-bottom: 0.8rem; }
     .about-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-main); }
     .about-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* ===== PUZZLE PIECES (B2C) ===== */
+    .puzzle-grid {
+      --pz-bg: #c9a0f1;
+      --pz-knob: 28px;
+      --pz-socket: 36px;
+      gap: 8px;
+    }
+    .puzzle-piece {
+      position: relative;
+      background: var(--pz-bg);
+      border: none;
+      backdrop-filter: none;
+      border-radius: 14px;
+      padding: 1.5rem 1.3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    .puzzle-piece .icon, .puzzle-piece h4, .puzzle-piece p { position: relative; z-index: 3; }
+    .puzzle-piece h4 { color: #1a1023; }
+    .puzzle-piece p { color: rgba(26, 16, 35, 0.75); }
+    .puzzle-piece:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45); }
+    .puzzle-piece .pz-knob, .puzzle-piece .pz-socket {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .puzzle-piece .pz-knob { background: var(--pz-bg); z-index: 2; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
+    .puzzle-piece .pz-socket { background: var(--cosmic-bg); z-index: 1; box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5); }
+    .puzzle-piece .pz-knob { width: var(--pz-knob); height: var(--pz-knob); }
+    .puzzle-piece .pz-knob.right { right: calc(var(--pz-knob) / -2); top: 50%; transform: translateY(-50%); }
+    .puzzle-piece .pz-knob.left { left: calc(var(--pz-knob) / -2); top: 50%; transform: translateY(-50%); }
+    .puzzle-piece .pz-knob.top { top: calc(var(--pz-knob) / -2); left: 50%; transform: translateX(-50%); }
+    .puzzle-piece .pz-knob.bottom { bottom: calc(var(--pz-knob) / -2); left: 50%; transform: translateX(-50%); }
+    .puzzle-piece .pz-socket { width: var(--pz-socket); height: var(--pz-socket); }
+    .puzzle-piece .pz-socket.right { right: calc(var(--pz-socket) / -2); top: 50%; transform: translateY(-50%); }
+    .puzzle-piece .pz-socket.top { top: calc(var(--pz-socket) / -2); left: 50%; transform: translateX(-50%); }
+    .puzzle-piece .pz-socket.bottom { bottom: calc(var(--pz-socket) / -2); left: 50%; transform: translateX(-50%); }
+    .puzzle-piece .pz-socket.left { left: calc(var(--pz-socket) / -2); top: 50%; transform: translateY(-50%); }
 
     .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .pain-grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
@@ -510,6 +630,11 @@
       backdrop-filter: blur(8px);
     }
     .methodology.purple-bg { border-color: rgba(198,240,116,0.1); }
+    .methodology.lavender-bg { border-color: rgba(201,160,241,0.15); }
+    .timeline-lavanda::before { background: linear-gradient(to bottom, #c9a0f1, #e6d5fa); }
+    .timeline-lavanda .timeline-dot { background: #c9a0f1; color: #1a1023; box-shadow: 0 0 10px rgba(201,160,241,0.5); }
+    .timeline-lavanda .timeline-header:hover { border-color: #c9a0f1; }
+    .timeline-lavanda .timeline-arrow { color: #c9a0f1; }
     .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
     .phases-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
     .phase {
@@ -634,11 +759,10 @@
     .pricing-card.featured {
       border: 2px solid var(--neon-lime);
       box-shadow: 0 0 30px rgba(236,81,220,0.25), 0 0 60px rgba(236,81,220,0.1);
-      transform: scale(1.05);
       z-index: 2;
       background: linear-gradient(135deg, rgba(24,17,43,0.8), rgba(236,81,220,0.05));
     }
-    .pricing-card.featured:hover { transform: scale(1.05) translateY(-4px); box-shadow: 0 0 40px rgba(236,81,220,0.35), 0 0 80px rgba(236,81,220,0.15); }
+    .pricing-card.featured:hover { transform: translateY(-4px); box-shadow: 0 0 40px rgba(236,81,220,0.35), 0 0 80px rgba(236,81,220,0.15); }
     .pricing-card.featured::after {
       content: '⭐ MÁS ELEGIDO';
       position: absolute;
@@ -666,11 +790,11 @@
     .pricing-card .price-detail { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; line-height: 1.5; }
     .pricing-card .btn { width: 100%; text-align: center; padding: 0.9rem; }
 
-    .pricing-card.featured .pricing-card-body { padding: 2rem 2.5rem 0; }
-    .pricing-card.featured h4 { font-size: 1.5rem; }
-    .pricing-card.featured .price { font-size: 3rem; }
-    .pricing-card.featured .desc { font-size: 1rem; }
-    .pricing-card.featured .price-detail { font-size: 0.95rem; }
+    .pricing-card.featured .pricing-card-body { padding: 1.5rem 2rem 0; }
+    .pricing-card.featured h4 { font-size: 1.2rem; }
+    .pricing-card.featured .price { font-size: 2.5rem; }
+    .pricing-card.featured .desc { font-size: 0.9rem; }
+    .pricing-card.featured .price-detail { font-size: 0.85rem; }
 
     /* B2B Pricing */
     .pricing-card.b2b-card { border-color: rgba(198,240,116,0.3); }
@@ -707,6 +831,8 @@
       color: var(--text-muted);
     }
     .b2c-features li::before { content: '✓'; color: var(--neon-lime); font-weight: 700; flex-shrink: 0; }
+    .b2c-features li.no::before { content: '✗'; color: rgba(255,255,255,0.35); }
+    .b2c-features li.no span { text-decoration: line-through; color: rgba(179,176,205,0.55); }
 
     .testimonials { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
 
@@ -961,8 +1087,32 @@
         gap: 0.8rem;
         border-bottom: 1px solid var(--glass-border);
       }
+      .nav-item.has-mega::after { display: none; }
+      .mega-panel {
+        position: static;
+        width: 100%;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        display: none;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: none;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--glass-border);
+        border-radius: 0;
+        margin: 0.3rem 0 0.4rem 0.6rem;
+        padding: 0.8rem 0 0.6rem 1rem;
+        transition: none;
+      }
+      .nav-item.has-mega.open .mega-panel { display: block; }
+      .mega-inner { grid-template-columns: 1fr; gap: 1.2rem; }
+      .nav-item.has-mega.open .nav-caret { transform: rotate(180deg); opacity: 1; }
+      .mega-panel .mega-link { padding: 0.5rem 0.75rem; margin: 0 -0.75rem; }
+      .mega-panel .mega-col h4 { margin-bottom: 0.3rem; }
       section { padding: 3rem 1.2rem; }
-      .hero-split { grid-template-columns: 1fr; padding-top: 0; margin: 0; gap: 1.5rem; }
+      .hero-split { grid-template-columns: 1fr; padding: 0.8cm 0; margin: 0; gap: 1.5rem; }
       .hero-panel { border-radius: 20px; }
       .hero-unified { padding: 96px 1.5rem 40px; min-height: auto; }
       .hero-unified-content h1 { font-size: 2.1rem; }
@@ -977,6 +1127,10 @@
       .hero-panel-content p { font-size: 0.9rem; }
       .section-title { font-size: 1.8rem; }
       .about-cards { grid-template-columns: 1fr; }
+      .puzzle-grid { grid-template-columns: 1fr 1fr; --pz-knob: 22px; --pz-socket: 28px; gap: 5px; }
+      .puzzle-piece { padding: 1rem 0.9rem; }
+      .puzzle-piece h4 { font-size: 0.95rem; }
+      .puzzle-piece p { font-size: 0.8rem; }
       .pricing-grid { grid-template-columns: 1fr; }
       .pricing-card.featured { transform: none; }
       .pricing-card.featured:hover { transform: translateY(-4px); }
@@ -1018,8 +1172,31 @@
     <div class="nav-center">
       <ul class="nav-links" id="navLinks">
         <li><a href="#inicio" onclick="irInicio(); return false;">Inicio</a></li>
-        <li><a href="#que-es" class="nav-talento" onclick="irPropuesta('b2c'); return false;">Soy talento</a></li>
-        <li><a href="#que-es-b2b" class="nav-empresa" onclick="irPropuesta('b2b'); return false;">Soy empresa</a></li>
+
+        <li class="nav-item has-mega">
+          <a href="#que-es" class="nav-talento nav-trigger" data-modo="b2c">Soy talento <span class="nav-caret">▾</span></a>
+          <div class="mega-panel mega-talento">
+            <div class="mega-mini-grid">
+              <a href="#que-es" class="mega-mini" onclick="irPropuestaSeccion('b2c','que-es'); return false;"><strong>Qué es Tu propio camino <span class="arrow">→</span></strong></a>
+              <a href="#como-funciona" class="mega-mini" onclick="irPropuestaSeccion('b2c','como-funciona'); return false;"><strong>Cómo funciona <span class="arrow">→</span></strong></a>
+              <a href="#metodologia" class="mega-mini" onclick="irPropuestaSeccion('b2c','metodologia'); return false;"><strong>Metodología <span class="arrow">→</span></strong></a>
+              <a href="#planes" class="mega-mini" onclick="irPropuestaSeccion('b2c','planes'); return false;"><strong>Planes <span class="arrow">→</span></strong></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item has-mega">
+          <a href="#que-es-b2b" class="nav-empresa nav-trigger" data-modo="b2b">Soy empresa <span class="nav-caret">▾</span></a>
+          <div class="mega-panel mega-empresa">
+            <div class="mega-mini-grid">
+              <a href="#que-es-b2b" class="mega-mini" onclick="irPropuestaSeccion('b2b','que-es-b2b'); return false;"><strong>Qué es <span class="arrow">→</span></strong></a>
+              <a href="#diagnostico-b2b" class="mega-mini" onclick="irPropuestaSeccion('b2b','diagnostico-b2b'); return false;"><strong>Diagnóstico <span class="arrow">→</span></strong></a>
+              <a href="#metodologia-b2b" class="mega-mini" onclick="irPropuestaSeccion('b2b','metodologia-b2b'); return false;"><strong>Metodología <span class="arrow">→</span></strong></a>
+              <a href="#planes-b2b" class="mega-mini" onclick="irPropuestaSeccion('b2b','planes-b2b'); return false;"><strong>Planes <span class="arrow">→</span></strong></a>
+            </div>
+          </div>
+        </li>
+
         <li><a href="#sobre-mi" onclick="irSobreMi(); return false;">Sobre mí</a></li>
         <li><a href="#contacto-form" onclick="irContacto(); return false;">Contacto</a></li>
         <li class="hidden"><a href="pages/para-vos.html">Para vos</a></li>
@@ -1075,7 +1252,6 @@
       </div>
     </div>
     <div class="manifesto">
-      <span class="section-tag pink">CONSTRUYENDO PUENTES QUE CONECTAN</span>
       <div class="manifesto-grid">
         <div class="manifesto-side manifesto-side-left">
           <img src="manifiesto-b2c.png" alt="Mentoría para talento" loading="lazy">
@@ -1099,16 +1275,17 @@
     <div class="about-grid">
       <div class="about-text">
         <h2>¿Qué es <span>Tu propio camino</span>?</h2>
+        <p class="about-sub">🎒 Un kit profesional con todo lo necesario para salir al mercado</p>
         <p><strong>POV:</strong> Buscás tu primer empleo profesional.<br><strong>POV:</strong> Querés cambiar de trabajo.<br><strong>POV:</strong> Sentís que no crecés donde estás.<br><br>Sea cual sea el tuyo, te acompaño a construir el puente hacia el próximo paso.</p>
       </div>
-      <div class="about-cards">
-        <div class="about-card"><div class="icon">🎯</div><h4>CV y LinkedIn</h4><p>Optimizamos tus herramientas desde cero para que tu perfil destaque.</p></div>
-        <div class="about-card"><div class="icon">🎤</div><h4>Ensayamos Juntas</h4><p>Simulacros de entrevistas en vivo para ganar confianza y seguridad.</p></div>
-        <div class="about-card"><div class="icon">💡</div><h4>Habilidades Blandas</h4><p>Potenciamos tu comunicación y presencia para equipos modernos.</p></div>
-        <div class="about-card"><div class="icon">🤝</div><h4>Acompañamiento Real</h4><p>Sesiones 1:1 por videollamada con seguimiento continuo.</p></div>
+      <div class="about-cards puzzle-grid">
+        <div class="about-card puzzle-piece"><span class="pz-socket right"></span><span class="pz-knob bottom"></span><div class="icon">🎯</div><h4>CV y LinkedIn</h4><p>Optimizamos tus herramientas desde cero para que tu perfil destaque.</p></div>
+        <div class="about-card puzzle-piece"><span class="pz-knob left"></span><span class="pz-socket bottom"></span><div class="icon">🎤</div><h4>Ensayamos Juntas</h4><p>Simulacros de entrevistas en vivo para ganar confianza y seguridad.</p></div>
+        <div class="about-card puzzle-piece"><span class="pz-socket top"></span><span class="pz-socket right"></span><div class="icon">💡</div><h4>Habilidades Blandas</h4><p>Potenciamos tu comunicación y presencia para equipos modernos.</p></div>
+        <div class="about-card puzzle-piece"><span class="pz-knob top"></span><span class="pz-knob left"></span><div class="icon">🤝</div><h4>Acompañamiento Real</h4><p>Sesiones 1:1 por videollamada con seguimiento continuo.</p></div>
       </div>
     </div>
-    <div class="how-works">
+    <div class="how-works" id="como-funciona">
       <div class="how-works-content">
         <h3 class="section-title pink" style="margin-bottom:1rem;font-size:1.8rem;">¿Cómo funciona?</h3>
         <ul class="how-works-list">
@@ -1200,13 +1377,41 @@
   <!-- ===== METODOLOGÍA B2C ===== -->
   <section id="metodologia" class="b2c-only">
     <span class="section-tag pink">METODOLOGÍA</span>
-    <h2 class="section-title pink">Metodología</h2>
+    <h2 class="section-title pink">Plan de acción</h2>
     <p class="section-subtitle">Un camino de 3 fases diseñado para llevarte de la claridad al impacto.</p>
-    <div class="methodology">
-      <div class="phases">
-        <div class="phase"><span class="step pink">1</span><h4>Claridad y rumbo</h4><p>FODA personal, rediseño de CV y LinkedIn en base a tus intereses - y sobre todo, hacia dónde querés ir.</p></div>
-        <div class="phase"><span class="step pink">2</span><h4>Estrategia y cruce</h4><p>Te preparamos practicando entrevistas en tiempo real, destacando tus soft y hard skills para cruzar con confianza.</p></div>
-        <div class="phase"><span class="step pink">3</span><h4>Impacto y camino propio</h4><p>Feedback y seguimiento para pulir áreas de mejora. Acompañamiento post mentoría incluido.</p></div>
+    <div class="methodology lavender-bg">
+      <span style="display:inline-block;font-weight:700;font-size:0.85rem;color:#c9a0f1;letter-spacing:0.05em;margin-bottom:1rem;">PROCESO</span>
+      <div class="timeline timeline-lavanda">
+        <div class="timeline-item open">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-header" onclick="toggleFase(this)">
+            <h4>Fase 1 · Claridad y rumbo</h4>
+            <span class="timeline-arrow">▾</span>
+          </div>
+          <div class="timeline-body">
+            <p>FODA personal, rediseño de CV y LinkedIn en base a tus intereses - y sobre todo, hacia dónde querés ir.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-header" onclick="toggleFase(this)">
+            <h4>Fase 2 · Estrategia y cruce</h4>
+            <span class="timeline-arrow">▾</span>
+          </div>
+          <div class="timeline-body">
+            <p>Te preparamos practicando entrevistas en tiempo real, destacando tus soft y hard skills para cruzar con confianza.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-header" onclick="toggleFase(this)">
+            <h4>Fase 3 · Impacto y camino propio</h4>
+            <span class="timeline-arrow">▾</span>
+          </div>
+          <div class="timeline-body">
+            <p>Feedback y seguimiento para pulir áreas de mejora. Acompañamiento post mentoría incluido.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1302,7 +1507,7 @@
         <img class="pricing-card-img" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=160&fit=crop" alt="Diagnóstico inicial" loading="lazy">
         <div class="pricing-card-body">
           <span class="section-tag pink" style="margin-bottom:0.5rem;display:inline-block;">ETAPA 1</span>
-          <h4>Brújula</h4>
+          <h4>🧭 Brújula</h4>
           <p class="desc">Encontrá tu rumbo. Diagnóstico personal y cimientos de tu perfil profesional.</p>
           <div class="price">$150.000</div>
           <p class="price-info">Contado o transferencia · 3 cuotas de $60.000</p>
@@ -1311,6 +1516,8 @@
             <li>Punto de partida (FODA) · Entregable en PDF</li>
             <li>CV en español y en inglés</li>
             <li>LinkedIn básico</li>
+            <li class="no"><span>2 Asesorías 1:1 de simulacros para entrevistas con feedback · Entregable en PDF</span></li>
+            <li class="no"><span>Mentoría Plus: 2 Asesorías 1:1 on demand</span></li>
           </ul>
           <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Lo quiero</a>
         </div>
@@ -1319,7 +1526,7 @@
         <img class="pricing-card-img" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=160&fit=crop" alt="CV" loading="lazy">
         <div class="pricing-card-body">
           <span class="section-tag pink" style="margin-bottom:0.5rem;display:inline-block;">ETAPA 2</span>
-          <h4>Puente</h4>
+          <h4>🌉 Puente</h4>
           <p class="desc">Cruzá preparada. Sumá la práctica que te faltaba para tus entrevistas.</p>
           <div class="price">$230.000</div>
           <p class="price-info">Contado o transferencia · 3 cuotas de $92.000</p>
@@ -1329,6 +1536,7 @@
             <li>CV en español y en inglés</li>
             <li>LinkedIn básico</li>
             <li>2 Asesorías 1:1 de simulacros para entrevistas con feedback · Entregable en PDF</li>
+            <li class="no"><span>Mentoría Plus: 2 Asesorías 1:1 on demand</span></li>
           </ul>
           <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Lo quiero</a>
         </div>
@@ -1337,7 +1545,7 @@
         <img class="pricing-card-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=160&fit=crop" alt="Match" loading="lazy">
         <div class="pricing-card-body">
           <span class="section-tag pink" style="margin-bottom:0.5rem;display:inline-block;">ETAPA 3</span>
-          <h4>Tu propio camino</h4>
+          <h4>🚀 Tu propio camino</h4>
           <p class="desc">Llegá con confianza. El programa completo con acompañamiento on demand.</p>
           <div class="price">$300.000</div>
           <p class="price-info">Contado o transferencia · 3 cuotas de $110.000</p>
@@ -1474,6 +1682,20 @@
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
   <script>
+    document.querySelectorAll('.nav-trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        const item = trigger.closest('.has-mega');
+        if (window.innerWidth <= 768) {
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.nav-item.has-mega.open').forEach(function (el) { el.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+        } else {
+          irPropuesta(trigger.getAttribute('data-modo'));
+        }
+      });
+    });
+
     function setModo(modo) {
       const body = document.body;
       const isB2B = modo === 'b2b';
@@ -1518,6 +1740,17 @@
       if (hero) hero.style.display = 'none';
       const target = modo === 'b2b' ? 'que-es-b2b' : 'que-es';
       const el = document.getElementById(target);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function irPropuestaSeccion(modo, seccion) {
+      setModo(modo);
+      closeNav();
+      document.body.classList.remove('modo-sobre-mi', 'modo-inicio', 'modo-contacto');
+      document.body.classList.add('modo-propuesta');
+      const hero = document.getElementById('inicio');
+      if (hero) hero.style.display = 'none';
+      const el = document.getElementById(seccion);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
 
