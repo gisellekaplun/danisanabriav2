@@ -501,6 +501,130 @@
       border: 2px solid var(--neon-pink);
       margin-left: 1rem;
     }
+
+    /* ===== SERVICIOS ZIGZAG (HOME) ===== */
+    .services-section {
+      padding: 4rem 0 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .services-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3.5rem;
+    }
+    .services-head .section-tag { margin-bottom: 1.2rem; }
+    .services-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 1.25rem;
+    }
+    .services-divider {
+      width: 64px;
+      height: 3px;
+      border: none;
+      border-radius: 100px;
+      background: var(--neon-lime);
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 0 12px var(--neon-lime);
+    }
+    .services-subtitle {
+      font-size: 1.05rem;
+      color: #A1A1AA;
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto 5rem;
+    }
+    .service-row:last-child { margin-bottom: 0; }
+    .service-media { position: relative; }
+    .service-media-border {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      transform: translate(14px, 14px);
+    }
+    .service-media-b2c .service-media-border { border: 1px solid rgba(201, 160, 241, 0.45); }
+    .service-media-b2b .service-media-border { border: 1px solid rgba(198, 240, 116, 0.45); }
+    .service-media img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+    }
+    .service-row-reverse .service-media { grid-column: 2; }
+    .service-row-reverse .service-content { grid-column: 1; grid-row: 1; }
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.42rem 0.95rem;
+      border-radius: 100px;
+      margin-bottom: 1.3rem;
+    }
+    .service-tag small {
+      font-weight: 600;
+      opacity: 0.75;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .service-tag-b2c { color: #c9a0f1; background: rgba(201, 160, 241, 0.1); border: 1px solid rgba(201, 160, 241, 0.25); }
+    .service-tag-b2b { color: #c6f074; background: rgba(198, 240, 116, 0.08); border: 1px solid rgba(198, 240, 116, 0.25); }
+    .service-content { text-align: left; }
+    .service-content h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+    .service-content p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 1.8rem;
+    }
+    .service-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+    .service-actions .btn {
+      margin-left: 0;
+      flex: 0 0 auto;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: normal;
+      padding: 0.7rem 2rem;
+      font-size: 0.9rem;
+    }
+    .service-btn-b2c { background: #c9a0f1; color: #1a1023; }
+    .service-btn-b2c:hover { background: #b48be0; box-shadow: 0 0 20px rgba(201, 160, 241, 0.35); transform: translateY(-2px); }
+    .service-btn-b2c-outline { background: transparent; color: #c9a0f1; border: 2px solid #c9a0f1; }
+    .service-btn-b2c-outline:hover { background: rgba(201, 160, 241, 0.1); box-shadow: none; transform: translateY(-2px); }
+    .service-btn-b2b { background: #c6f074; color: #0B0813; }
+    .service-btn-b2b:hover { background: #d4f59a; box-shadow: 0 0 20px rgba(198, 240, 116, 0.35); transform: translateY(-2px); }
+    .service-btn-b2b-outline { background: transparent; color: #c6f074; border: 2px solid #c6f074; }
+    .service-btn-b2b-outline:hover { background: rgba(198, 240, 116, 0.1); box-shadow: none; transform: translateY(-2px); }
+
     .btn-outline-purple:hover { background: rgba(198,240,116,0.08); }
     .contact-form-back { display: block; width: fit-content; margin-left: 0; margin-bottom: 1.5rem; }
     .btn-volver { padding: 0.5rem 1.25rem; font-size: 0.8rem; border-radius: 6px; }
@@ -534,19 +658,34 @@
     /* ===== PUZZLE PIECES (B2C) ===== */
     .puzzle-grid {
       --pz-bg: #c9a0f1;
+      --pz-bg-soft: rgba(201, 160, 241, 0.2);
+      --pz-bg-mid: rgba(201, 160, 241, 0.5);
       --pz-knob: 28px;
       --pz-socket: 36px;
       gap: 8px;
     }
     .puzzle-piece {
       position: relative;
-      background: var(--pz-bg);
+      background: linear-gradient(135deg, var(--pz-bg-soft), var(--pz-bg-mid));
       border: none;
       backdrop-filter: none;
       border-radius: 14px;
       padding: 1.1rem 1rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .puzzle-piece::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--pz-bg-mid), var(--pz-bg));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .puzzle-piece:hover::after { opacity: 1; }
     .puzzle-piece .icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
     .puzzle-piece h4 { font-size: 1rem; }
     .puzzle-piece p { font-size: 0.85rem; }
@@ -573,7 +712,7 @@
     .puzzle-piece .pz-socket.left { left: calc(var(--pz-socket) / -2); top: 50%; transform: translateY(-50%); }
 
     /* ===== PUZZLE PIECES (B2B) ===== */
-    .puzzle-grid-b2b { --pz-bg: #c6f074; }
+    .puzzle-grid-b2b { --pz-bg: #c6f074; --pz-bg-soft: rgba(198, 240, 116, 0.18); --pz-bg-mid: rgba(198, 240, 116, 0.5); }
     .puzzle-grid-b2b .puzzle-piece h4 { color: #0B0813; }
     .puzzle-grid-b2b .puzzle-piece p { color: rgba(11, 8, 19, 0.75); }
 
@@ -974,6 +1113,7 @@
     /* B2B Pricing */
     .pricing-card.b2b-card { border-color: rgba(198,240,116,0.3); }
     .pricing-card.b2b-card .pricing-card-body { padding-bottom: 0.5cm; }
+    .pricing-card:not(.b2b-card) .pricing-card-body { padding-bottom: 0.5cm; }
     .pricing-card.b2b-card.featured::after { content: 'RECOMENDADO'; background: var(--neon-pink); color: var(--cosmic-bg); }
     .pricing-card.b2b-card .price-consult { font-size: 1.6rem; font-weight: 800; color: var(--neon-pink); margin-bottom: 0.3rem; }
     .b2b-features {
@@ -1303,7 +1443,19 @@
       .mega-panel .mega-link { padding: 0.5rem 0.75rem; margin: 0 -0.75rem; }
       .mega-panel .mega-col h4 { margin-bottom: 0.3rem; }
       section { padding: 3rem 1.2rem; }
+      section, .inicio-shell, #como-funciona { scroll-margin-top: 130px; }
       .hero-split { grid-template-columns: 1fr; padding: 0.8cm 0; margin: 0; gap: 1.5rem; }
+      .services-section { padding: 2.5rem 0 3.5rem; }
+      .services-title { font-size: 1.7rem; }
+      .services-head { margin-bottom: 2.5rem; }
+      .service-row { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3.5rem; }
+      .service-row-reverse .service-media,
+      .service-row-reverse .service-content { grid-column: auto; grid-row: auto; }
+      .service-media img { aspect-ratio: 16/10; }
+      .service-content h3 { font-size: 1.55rem; }
+      .service-content p { font-size: 0.98rem; }
+      .service-actions .btn { flex: 1 1 100%; }
+      .service-actions { max-width: 100%; }
       .hero-panel { border-radius: 20px; }
       .hero-unified { padding: 96px 1.5rem 40px; min-height: auto; }
       .hero-unified-content h1 { font-size: 2.1rem; }
@@ -1415,38 +1567,39 @@
         <p>Ambos buscan crecer, pero desde expectativas distintas. Mi trabajo es conectar ambas miradas para transformar esa brecha en estabilidad, compromiso y crecimiento mutuo.</p>
       </div>
     </div>
-    <div class="hero-split">
-      <div class="hero-panel hero-panel-b2c">
-        <div class="hero-panel-images">
+    <div class="services-section">
+      <div class="services-head">
+        <h2 class="services-title">Nuestros servicios</h2>
+        <div class="services-divider" aria-hidden="true"></div>
+        <p class="services-subtitle">Acompañamiento estratégico para profesionales que buscan su lugar y para empresas que eligen fidelizar a su talento.</p>
+      </div>
+
+      <div class="service-row service-row-reverse">
+        <div class="service-media">
+          <div class="service-media-border"></div>
           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=900&fit=crop" alt="Jóvenes profesionales" loading="lazy">
-          <div class="hero-panel-overlay"></div>
         </div>
-        <div class="hero-panel-content">
-          <div class="hero-panel-text">
-            <span class="hero-tag">Tu propio camino</span>
-            <h1>Tu camino profesional puede tener un <em>equilibrio</em> con la vida que querés llevar.</h1>
-            <p>Una mentoría laboral intensiva para estudiantes y recién graduadas que quieren su primer empleo profesional. Acompañamiento integral, práctico y personalizado.</p>
-          </div>
-          <div class="hero-panel-actions">
-            <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn" target="_blank">Quiero empezar mi camino</a>
-            <a href="#que-es" class="btn btn-outline" onclick="irPropuesta('b2c'); return false;">Conocé más</a>
+        <div class="service-content">
+          <span class="service-tag service-tag-b2c">Tu propio camino <small>· Mentoría B2C</small></span>
+          <h3>Tu camino profesional puede tener un equilibrio con la vida que querés llevar.</h3>
+          <p>Una mentoría laboral intensiva para jóvenes profesionales que buscan dar su primer gran salto o redefinir su rumbo laboral con guía personalizada.</p>
+          <div class="service-actions">
+            <a href="#que-es" class="btn btn-outline service-btn-b2c-outline" onclick="irPropuesta('b2c'); return false;">Conocé más</a>
           </div>
         </div>
       </div>
-      <div class="hero-panel hero-panel-b2b">
-        <div class="hero-panel-images">
+
+      <div class="service-row">
+        <div class="service-media">
+          <div class="service-media-border"></div>
           <img src="https://lh3.googleusercontent.com/d/1FUV_IYyKSiOYZacBCm_5qLqCIgDXIaTe" alt="Equipo corporativo" loading="lazy">
-          <div class="hero-panel-overlay"></div>
         </div>
-        <div class="hero-panel-content">
-          <div class="hero-panel-text">
-            <span class="hero-tag">Consultoría Organizacional</span>
-            <h1>Construimos las condiciones para que el talento <em>Gen Z</em> elija quedarse en tu empresa.</h1>
-            <p>Mentoría e integración de RRHH especializada en fidelización, cultura intergeneracional y desarrollo para Pymes y Startups.</p>
-          </div>
-          <div class="hero-panel-actions">
-            <a href="https://api.whatsapp.com/send?phone=5491150268149" class="btn btn-hero-b2b" target="_blank">Quiero transformar mi empresa</a>
-            <a href="#que-es-b2b" class="btn btn-hero-b2b-outline" onclick="irPropuesta('b2b'); return false;">Conocé más</a>
+        <div class="service-content">
+          <span class="service-tag service-tag-b2b">Consultoría Organizacional <small>· Servicio B2B</small></span>
+          <h3>Construimos las condiciones para que el talento joven elija quedarse en tu empresa.</h3>
+          <p>Mentoría e integración estratégica de RRHH especializada en fidelización, cultura intergeneracional y desarrollo para Pymes y Startups.</p>
+          <div class="service-actions">
+            <a href="#que-es-b2b" class="btn btn-outline service-btn-b2b-outline" onclick="irPropuesta('b2b'); return false;">Más información</a>
           </div>
         </div>
       </div>
