@@ -119,28 +119,28 @@
 
     /* ===== NAV ===== */
     nav {
-      position: fixed; top: 0; width: 100%;
-      padding: 0.8rem 2rem;
+      position: relative; width: 100%;
+      padding: 0.64rem 1.6rem;
       background: rgba(11, 8, 19, 0.85);
       backdrop-filter: blur(16px);
       display: flex; justify-content: space-between; align-items: center;
       z-index: 100;
       border-bottom: 1px solid var(--glass-border);
     }
-    .logo { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 1.3rem; color: var(--neon-lime); flex-shrink: 0; }
+    .logo { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 1.04rem; color: var(--neon-lime); flex-shrink: 0; }
     .logo span { color: var(--text-main); }
-    .logo .logo-sub { font-style: normal; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); }
+    .logo .logo-sub { font-style: normal; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); }
 
     .nav-center { display: flex; align-items: center; }
     .nav-links {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
       list-style: none;
-      font-size: 0.85rem;
+      font-size: 0.68rem;
       font-weight: 500;
       align-items: center;
     }
-    .nav-links a { transition: color 0.3s; color: var(--text-muted); padding: 0.3rem 0.6rem; font-weight: 600; }
+    .nav-links a { transition: color 0.3s; color: var(--text-muted); padding: 0.24rem 0.48rem; font-weight: 600; }
     .nav-links a:hover { color: var(--text-main); }
     .nav-talento { color: #c9a0f1 !important; }
     .nav-empresa { color: #c6f074 !important; }
@@ -221,12 +221,12 @@
     .mega-mini:hover strong .arrow { opacity: 1; transform: translateX(0); }
     .mega-empresa .mega-mini strong .arrow { color: #c6f074; }
     .mega-empresa .mega-mini:hover { border-color: rgba(198, 240, 116, 0.45); }
-    #como-funciona { scroll-margin-top: 100px; }
+    #como-funciona { scroll-margin-top: 20px; }
 
-    .menu-toggle { display: none; background: none; border: none; color: var(--text-main); font-size: 1.5rem; cursor: pointer; }
+    .menu-toggle { display: none; background: none; border: none; color: var(--text-main); font-size: 1.2rem; cursor: pointer; }
 
     /* ===== SECTIONS ===== */
-    section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; scroll-margin-top: 70px; }
+    section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; scroll-margin-top: 20px; }
     .section-tag {
       display: inline-block;
       padding: 0.3rem 0.9rem;
@@ -257,7 +257,7 @@
     }
 
     /* Hero Unificado (mensaje puentes) */
-    .inicio-shell { max-width: 100%; padding: 0; margin: 0 auto; scroll-margin-top: 70px; }
+    .inicio-shell { max-width: 100%; padding: 0; margin: 0 auto; scroll-margin-top: 20px; }
     .hero-unified {
       min-height: 72vh;
       display: flex;
@@ -983,13 +983,13 @@
       margin: 1.6rem 0 0.5rem;
     }
     .sobre-mi-sub:first-of-type { margin-top: 0; }
-    body.modo-sobre-mi section:not(#sobre-mi),
+    body.modo-sobre-mi section:not(#sobre-mi):not(.faq-section),
     body.modo-sobre-mi .promise { display: none !important; }
     body.modo-sobre-mi #sobre-mi { display: block; }
-    body.modo-inicio section:not(#inicio),
+    body.modo-inicio section:not(#inicio):not(.faq-section),
     body.modo-inicio .promise { display: none !important; }
     body.modo-propuesta #sobre-mi { display: none !important; }
-    body.modo-contacto section:not(#contacto-form),
+    body.modo-contacto section:not(#contacto-form):not(.faq-section),
     body.modo-contacto .promise { display: none !important; }
     body.modo-contacto #contacto-form { display: block; }
     body:not(.modo-contacto) #contacto-form { display: none !important; }
@@ -1348,6 +1348,53 @@
       margin-top: 0.5rem;
     }
 
+    /* ===== FAQ ACCORDION (Home + Page) ===== */
+    .faq-section { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+    .faq-section .section-tag { margin-bottom: 0.5rem; }
+    .faq-section .section-title { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    .faq-section .section-subtitle { margin-bottom: 2rem; }
+    .faq-section .section-title { color: var(--text-main); }
+    .faq-list { list-style: none; }
+    .faq-item { border-bottom: 1px solid rgba(201, 160, 241, 0.18); }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 0; font-size: 1rem; font-weight: 600;
+      color: var(--text-main); text-align: left;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: #c9a0f1; }
+    .faq-icon {
+      font-size: 1.3rem; font-weight: 300; color: var(--text-muted);
+      transition: transform 0.3s ease; flex-shrink: 0; margin-left: 1rem;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.1rem; }
+    .faq-cta { text-align: center; margin-top: 2rem; }
+    .faq-btn-sm { font-size: 0.8rem; padding: 0.5rem 1.2rem; }
+    .faq-section .btn-outline { color: #c9a0f1; border-color: #c9a0f1; }
+    .faq-section .btn-outline:hover { background: rgba(201, 160, 241, 0.1); }
+    .faq-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .faq-filter-btn {
+      background: none; border: 1px solid var(--glass-border);
+      color: var(--text-muted); padding: 0.4rem 1rem; border-radius: 999px;
+      font-size: 0.8rem; font-weight: 600; cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: all 0.25s;
+    }
+    .faq-filter-btn:hover, .faq-filter-btn.active {
+      background: var(--neon-lime); color: #fff; border-color: var(--neon-lime);
+    }
+    .faq-item[data-cat] { transition: opacity 0.25s, max-height 0.35s; }
+    .faq-item[data-cat].hidden-faq { display: none; }
+
     footer {
       border-top: 1px solid var(--glass-border);
       padding: 3rem 2rem;
@@ -1432,8 +1479,8 @@
         flex-direction: column;
         background: rgba(11,8,19,0.95);
         backdrop-filter: blur(16px);
-        padding: 1rem 2rem;
-        gap: 0.8rem;
+        padding: 0.8rem 1.6rem;
+        gap: 0.64rem;
         border-bottom: 1px solid var(--glass-border);
       }
       .nav-item.has-mega::after { display: none; }
@@ -1461,7 +1508,7 @@
       .mega-panel .mega-link { padding: 0.5rem 0.75rem; margin: 0 -0.75rem; }
       .mega-panel .mega-col h4 { margin-bottom: 0.3rem; }
       section { padding: 3rem 1.2rem; }
-      section, .inicio-shell, #como-funciona { scroll-margin-top: 130px; }
+      section, .inicio-shell, #como-funciona { scroll-margin-top: 20px; }
       .hero-split { grid-template-columns: 1fr; padding: 0.8cm 0; margin: 0; gap: 1.5rem; }
       .services-section { padding: 2.5rem 0 3.5rem; }
       .services-title { font-size: 1.7rem; }
@@ -1471,8 +1518,8 @@
       .service-row-reverse .service-content { grid-column: auto; grid-row: auto; }
       .service-media img { aspect-ratio: 16/10; }
       .service-content h3 { font-size: 1.55rem; }
-      .service-content p { font-size: 0.98rem; }
-      .service-actions .btn { flex: 1 1 100%; }
+      .service-content p { font-size: 0.98rem; padding: 0 0.5cm; }
+      .service-actions .btn { flex: 0 0 auto; font-size: 0.7rem; padding: 0.4rem 1rem; }
       .service-actions { max-width: 100%; }
       .hero-panel { border-radius: 20px; }
       .hero-unified { padding: 96px 1.5rem 40px; min-height: auto; }
@@ -1569,6 +1616,7 @@
 
         <li><a href="#sobre-mi" onclick="irSobreMi(); return false;">Sobre mí</a></li>
         <li><a href="#contacto-form" onclick="irContacto(); return false;">Contacto</a></li>
+        <li><a href="preguntas-frecuentes.html">FAQs</a></li>
         <li class="hidden"><a href="pages/para-vos.html">Para vos</a></li>
         <li class="hidden"><a href="pages/para-tu-empresa.html">Para tu empresa</a></li>
       </ul>
@@ -2103,8 +2151,8 @@
   <section id="contacto-form" class="contact-form-section">
     <a href="#inicio" class="btn btn-outline contact-form-back btn-volver" onclick="irInicio(); return false;">Volver</a>
     <span class="section-tag pink">CONTACTO</span>
-    <h2 class="section-title">Contame tu caso</h2>
-    <p class="section-subtitle">Escribime y te respondo a la brevedad.</p>
+        <h2 class="section-title">Contanos tu caso</h2>
+        <p class="section-subtitle">Escribinos y te respondemos a la brevedad.</p>
     <form class="contact-form" action="#" method="POST">
       <label for="form-nombre">Nombre
         <input type="text" id="form-nombre" name="nombre" placeholder="Tu nombre" required>
@@ -2122,8 +2170,34 @@
         <textarea id="form-mensaje" name="mensaje" placeholder="Contame brevemente tu situación..." required></textarea>
       </label>
       <button type="submit" class="btn">Enviar consulta</button>
-      <p class="contact-form-note">También podés escribirme directo por <a href="https://api.whatsapp.com/send?phone=5491150268149" style="color:var(--neon-lime);">WhatsApp</a>.</p>
+      <p class="contact-form-note">También podés escribirnos por <a href="https://api.whatsapp.com/send?phone=5491150268149" style="color:var(--neon-lime);">WhatsApp</a>.</p>
     </form>
+  </section>
+
+  <!-- ===== FAQ (Home — 2 preguntas) ===== -->
+  <section class="faq-section" id="faq-home">
+    <span class="section-tag purple">PREGUNTAS FRECUENTES</span>
+    <h2 class="section-title">¿Tenés dudas?</h2>
+    <p class="section-subtitle">Resolvemos las consultas más comunes sobre nuestro enfoque y servicios.</p>
+    <ul class="faq-list">
+      <li class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Qué es el enfoque de "Inbound Talent" y en qué se diferencia del reclutamiento tradicional?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>El reclutamiento tradicional (Outbound) sale a cazar candidatos de forma reactiva cuando se abre una vacante, generando altos costos y rotación. El Inbound Talent transforma la cultura de la empresa y el perfil del profesional en polos magnéticos: atrae y retiene talento de forma orgánica por alineación de propósito y valores.</p></div>
+      </li>
+      <li class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Por qué conviven servicios para empresas (B2B) y profesionales (B2C) bajo una misma propuesta?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Porque la atracción laboral es una ecuación de dos lados: para que exista una conexión real, la empresa debe saber fidelizar y el profesional debe saber comunicar su valor. Trabajar ambos frentes brinda una visión integral y real de lo que hoy exige el mercado.</p></div>
+      </li>
+    </ul>
+    <div class="faq-cta">
+      <a href="preguntas-frecuentes.html" class="btn btn-outline faq-btn-sm">Ver todas →</a>
+    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
