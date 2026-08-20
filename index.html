@@ -1541,8 +1541,9 @@
       .hero-panel-content p { font-size: 0.9rem; }
       .section-title { font-size: 1.8rem; }
       .about-cards { grid-template-columns: 1fr; }
-      .puzzle-grid { grid-template-columns: 1fr 1fr; --pz-knob: 22px; --pz-socket: 28px; gap: 5px; }
-      .puzzle-piece { padding: 1rem 0.9rem; }
+      .puzzle-grid { grid-template-columns: 1fr 1fr; --pz-knob: 22px; --pz-socket: 28px; gap: 18px; overflow: visible; }
+      .puzzle-piece { padding: 1rem 0.9rem; overflow: visible; }
+      .puzzle-piece:active { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45); }
       .puzzle-piece h4 { font-size: 0.95rem; }
       .puzzle-piece p { font-size: 0.8rem; }
       .pricing-grid { grid-template-columns: 1fr; }
