@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes — Dani Sanabria</title>
+  <meta name="description" content="Resolvemos las consultas más comunes sobre mentoría laboral, consultoría organizacional y el enfoque de Inbound Talent.">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Geomini:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-lime: #ec51dc;
+      --neon-pink: #c6f074;
+      --cosmic-bg: #0B0813;
+      --cosmic-card: #18112B;
+      --cosmic-card-hover: #1f1a30;
+      --text-main: #fafafa;
+      --text-muted: #B3B0CD;
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-bg: rgba(23, 22, 26, 0.6);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(135deg, #0B0813 0%, #120D20 40%, #1A0F2E 70%, #0B0813 100%);
+      background-attachment: fixed;
+      color: var(--text-muted);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3, h4, h5 { font-family: 'Geomini', sans-serif; color: var(--text-main); }
+
+    /* ===== NAV ===== */
+    nav {
+      position: relative; width: 100%;
+      padding: 0.64rem 1.6rem;
+      background: rgba(11, 8, 19, 0.85);
+      backdrop-filter: blur(16px);
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 100;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .logo { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 1.04rem; color: var(--neon-lime); flex-shrink: 0; }
+    .logo span { color: var(--text-main); }
+    .logo .logo-sub { font-style: normal; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); }
+    .nav-center { display: flex; align-items: center; }
+    .nav-links {
+      display: flex; gap: 0.4rem; list-style: none;
+      font-size: 0.68rem; font-weight: 500; align-items: center;
+    }
+    .nav-links a { transition: color 0.3s; color: var(--text-muted); padding: 0.24rem 0.48rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--text-main); }
+    .nav-links a.active-link { color: var(--neon-lime); }
+    .hidden { display: none !important; }
+
+    /* ===== MEGA MENU ===== */
+    .nav-item.has-mega { position: relative; }
+    .nav-item.has-mega::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 16px; }
+    .nav-trigger { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .nav-caret { font-size: 0.65rem; opacity: 0.6; transition: transform 0.3s ease, opacity 0.3s ease; }
+    .nav-item.has-mega:hover .nav-caret { transform: rotate(180deg); opacity: 1; }
+
+    .mega-panel {
+      position: absolute; top: 100%; left: 50%;
+      width: min(310px, calc(100vw - 120px));
+      transform: translateX(-50%) translateY(10px);
+      opacity: 0; visibility: hidden; pointer-events: none;
+      background: rgba(15, 11, 26, 0.97);
+      backdrop-filter: blur(22px);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55);
+      padding: 1.7rem 1.9rem;
+      transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+    }
+    .nav-item.has-mega:hover .mega-panel,
+    .nav-item.has-mega:focus-within .mega-panel {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .mega-mini-grid { display: grid; grid-template-columns: 1fr; gap: 0.7rem; }
+    .mega-mini {
+      display: flex; align-items: center;
+      padding: 1rem 1.1rem; border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    .mega-mini strong { font-size: 0.92rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 0.45rem; width: 100%; line-height: 1.3; }
+    .mega-mini strong .arrow { margin-left: auto; opacity: 0; transform: translateX(-4px); transition: opacity 0.25s ease, transform 0.25s ease; color: #c9a0f1; }
+    .mega-mini:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(201, 160, 241, 0.45); transform: translateY(-2px); }
+    .mega-mini:hover strong .arrow { opacity: 1; transform: translateX(0); }
+    .mega-empresa .mega-mini strong .arrow { color: #c6f074; }
+    .mega-empresa .mega-mini:hover { border-color: rgba(198, 240, 116, 0.45); }
+    .mega-talento { border-top: 3px solid #c9a0f1; }
+    .mega-empresa { border-top: 3px solid #c6f074; }
+    .nav-talento { color: #c9a0f1 !important; }
+    .nav-empresa { color: #c6f074 !important; }
+    .nav-talento:hover, .nav-empresa:hover { color: var(--text-main) !important; }
+
+    .menu-toggle { display: none; background: none; border: none; color: var(--text-main); font-size: 1.2rem; cursor: pointer; }
+
+    /* ===== PAGE HEADER ===== */
+    .faq-page-header {
+      max-width: 800px; margin: 0 auto; padding: 4rem 2rem 0;
+      text-align: center;
+    }
+    .faq-page-header h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    .faq-page-header p { color: var(--text-muted); margin-bottom: 2rem; }
+
+    /* ===== SECTION TAGS (from main site) ===== */
+    .section-tag {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .section-tag.purple {
+      background: rgba(201, 160, 241, 0.12);
+      color: #c9a0f1;
+      border: 1px solid rgba(201, 160, 241, 0.28);
+    }
+    .section-tag.pink {
+      background: rgba(236, 81, 220, 0.12);
+      color: #ec51dc;
+      border: 1px solid rgba(236, 81, 220, 0.28);
+    }
+
+    /* ===== FAQ FILTERS ===== */
+    .faq-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+    .faq-filter-btn {
+      background: none; border: 1px solid var(--glass-border);
+      color: var(--text-muted); padding: 0.4rem 1rem; border-radius: 999px;
+      font-size: 0.8rem; font-weight: 600; cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: all 0.25s;
+    }
+    .faq-filter-btn:hover, .faq-filter-btn.active {
+      background: var(--neon-lime); color: #fff; border-color: var(--neon-lime);
+    }
+
+    /* ===== FAQ LIST ===== */
+    .faq-page-body { max-width: 800px; margin: 0 auto; padding: 0 2rem 4rem; }
+    .faq-list { list-style: none; }
+    .faq-item { border-bottom: 1px solid var(--glass-border); }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 0; font-size: 1rem; font-weight: 600;
+      color: var(--text-main); text-align: left;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--neon-lime); }
+    .faq-icon {
+      font-size: 1.3rem; font-weight: 300; color: var(--text-muted);
+      transition: transform 0.3s ease; flex-shrink: 0; margin-left: 1rem;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.1rem; }
+    .faq-item[data-cat].hidden-faq { display: none; }
+
+    /* ===== BACK LINK ===== */
+    .back-home {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--text-muted); font-size: 0.85rem; font-weight: 600;
+      margin-bottom: 1.5rem; transition: color 0.2s;
+    }
+    .back-home:hover { color: var(--neon-lime); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--glass-border);
+      padding: 3rem 2rem; text-align: center;
+      color: var(--text-muted); font-size: 0.9rem;
+    }
+    footer .social { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+    footer .social a { color: var(--text-muted); transition: color 0.3s; display: inline-flex; align-items: center; }
+    footer .social a:hover { color: var(--neon-lime); }
+    footer .social svg { width: 24px; height: 24px; fill: currentColor; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; order: 2; }
+      .nav-links.open {
+        display: flex;
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(11,8,19,0.95);
+        backdrop-filter: blur(16px);
+        padding: 0.8rem 1.6rem;
+        gap: 0.64rem;
+        border-bottom: 1px solid var(--glass-border);
+      }
+      .nav-item.has-mega::after { display: none; }
+      .mega-panel {
+        position: static; width: 100%;
+        transform: none; opacity: 1; visibility: visible; pointer-events: auto;
+        display: none;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: none; box-shadow: none; border: none;
+        border-left: 2px solid var(--glass-border); border-radius: 0;
+        margin: 0.3rem 0 0.4rem 0.6rem;
+        padding: 0.8rem 0 0.6rem 1rem;
+        transition: none;
+      }
+      .nav-item.has-mega.open .mega-panel { display: block; }
+      .mega-inner { grid-template-columns: 1fr; gap: 1.2rem; }
+      .nav-item.has-mega.open .nav-caret { transform: rotate(180deg); opacity: 1; }
+      .mega-panel .mega-link { padding: 0.5rem 0.75rem; margin: 0 -0.75rem; }
+      .mega-panel .mega-col h4 { margin-bottom: 0.3rem; }
+      .faq-page-header h1 { font-size: 1.6rem; }
+      .faq-filters { gap: 0.4rem; }
+      .faq-filter-btn { font-size: 0.72rem; padding: 0.35rem 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="logo">Dani <span>Sanabria</span> <em class="logo-sub">| Mentoría laboral</em></div>
+    <div class="nav-center">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#inicio">Inicio</a></li>
+
+        <li class="nav-item has-mega">
+          <a href="index.html#que-es" class="nav-talento nav-trigger">Soy talento <span class="nav-caret">▾</span></a>
+          <div class="mega-panel mega-talento">
+            <div class="mega-mini-grid">
+              <a href="index.html#que-es" class="mega-mini"><strong>Qué es <span class="arrow">→</span></strong></a>
+              <a href="index.html#como-funciona" class="mega-mini"><strong>Cómo funciona <span class="arrow">→</span></strong></a>
+              <a href="index.html#metodologia" class="mega-mini"><strong>Metodología <span class="arrow">→</span></strong></a>
+              <a href="index.html#planes" class="mega-mini"><strong>Planes <span class="arrow">→</span></strong></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item has-mega">
+          <a href="index.html#que-es-b2b" class="nav-empresa nav-trigger">Soy empresa <span class="nav-caret">▾</span></a>
+          <div class="mega-panel mega-empresa">
+            <div class="mega-mini-grid">
+              <a href="index.html#que-es-b2b" class="mega-mini"><strong>Qué es <span class="arrow">→</span></strong></a>
+              <a href="index.html#diagnostico-b2b" class="mega-mini"><strong>Diagnóstico <span class="arrow">→</span></strong></a>
+              <a href="index.html#metodologia-b2b" class="mega-mini"><strong>Metodología <span class="arrow">→</span></strong></a>
+              <a href="index.html#planes-b2b" class="mega-mini"><strong>Planes <span class="arrow">→</span></strong></a>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a href="index.html#contacto-form">Contacto</a></li>
+        <li><a href="preguntas-frecuentes.html" class="active-link">FAQs</a></li>
+        <li class="hidden"><a href="pages/para-vos.html">Para vos</a></li>
+        <li class="hidden"><a href="pages/para-tu-empresa.html">Para tu empresa</a></li>
+      </ul>
+    </div>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </nav>
+
+  <div class="faq-page-header">
+    <a href="index.html" class="back-home">← Volver al inicio</a>
+    <span class="section-tag purple">PREGUNTAS FRECUENTES</span>
+    <h1>¿Tenés dudas?</h1>
+    <p>Resolvemos las consultas más comunes sobre nuestro enfoque y servicios.</p>
+
+    <div class="faq-filters">
+      <button class="faq-filter-btn active" data-filter="all">Todas (10)</button>
+      <button class="faq-filter-btn" data-filter="b2b">Para Empresas (4)</button>
+      <button class="faq-filter-btn" data-filter="b2c">Para Talentos (4)</button>
+      <button class="faq-filter-btn" data-filter="general">Generales (2)</button>
+    </div>
+  </div>
+
+  <div class="faq-page-body">
+    <ul class="faq-list">
+
+      <!-- GENERAL -->
+      <li class="faq-item" data-cat="general">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Qué es el enfoque de "Inbound Talent" y en qué se diferencia del reclutamiento tradicional?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>El reclutamiento tradicional (Outbound) sale a cazar candidatos de forma reactiva cuando se abre una vacante, generando altos costos y rotación. El Inbound Talent transforma la cultura de la empresa y el perfil del profesional en polos magnéticos: atrae y retiene talento de forma orgánica por alineación de propósito y valores.</p></div>
+      </li>
+
+      <!-- B2B -->
+      <li class="faq-item" data-cat="b2b">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Cómo ayuda la consultoría a reducir la rotación de talento joven en mi empresa?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Auditamos la propuesta de valor interna y capacitamos a los mandos medios para adaptar el liderazgo a las expectativas actuales (autonomía, propósito y desarrollo). Al alinear la estructura corporativa con lo que motiva a las nuevas generaciones, la retención deja de forzarse y se vuelve espontánea.</p></div>
+      </li>
+
+      <!-- B2C -->
+      <li class="faq-item" data-cat="b2c">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿En qué se diferencia la mentoría profesional de un armado de CV tradicional?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>No es un ajuste cosmético de un documento. Es un proceso estratégico de posicionamiento laboral donde identificás tu propuesta de valor, aprendés a atraer ofertas alineadas con tu estilo de vida y te preparás para encarar entrevistas con seguridad sin resignar tu bienestar.</p></div>
+      </li>
+
+      <!-- B2B -->
+      <li class="faq-item" data-cat="b2b">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Trabajan únicamente con corporaciones o también con PYMEs y Startups?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Trabajamos principalmente con PYMEs y Startups en etapas de consolidación o escala. En estos entornos, perder a un colaborador clave cuesta el doble; por eso, diseñar una cultura magnética y procesos claros de fidelización genera un impacto directo e inmediato en el negocio.</p></div>
+      </li>
+
+      <!-- B2B -->
+      <li class="faq-item" data-cat="b2b">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Cuánto tiempo toma ver resultados en la atracción y retención del equipo?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>La auditoría y el diagnóstico inicial entregan un plan de acción en 30 días. Los primeros cambios en el clima laboral y la atracción orgánica de candidatos comienzan a evidenciarse entre el segundo y tercer mes de implementación.</p></div>
+      </li>
+
+      <!-- B2B -->
+      <li class="faq-item" data-cat="b2b">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Qué aspectos evalúan durante la auditoría de cultura organizacional?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Evaluamos la claridad de la propuesta de valor al empleado (EVP), los estilos de liderazgo en mandos medios, los canales de comunicación interna y el nivel de autonomía y flexibilidad que perciben los equipos.</p></div>
+      </li>
+
+      <!-- B2C -->
+      <li class="faq-item" data-cat="b2c">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿A quién está dirigida exactamente la mentoría de desarrollo de carrera?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>A estudiantes avanzados, recién graduados y jóvenes profesionales que buscan dar su primer gran salto laboral o reorientar su carrera hacia entornos que respeten su bienestar, sin tener que resignar pretensiones salariales ni desarrollo continuo.</p></div>
+      </li>
+
+      <!-- B2C -->
+      <li class="faq-item" data-cat="b2c">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Cómo me ayuda el programa a conseguir trabajo sin descuidar mi equilibrio personal?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Te enseñamos a identificar empresas cuyas culturas ya promuevan el trabajo flexible y la evaluación por resultados. Te posicionamos como un perfil magnético en el mercado para que no tengas que aceptar ofertas que choquen con tu calidad de vida.</p></div>
+      </li>
+
+      <!-- B2C -->
+      <li class="faq-item" data-cat="b2c">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Qué incluye el acompañamiento durante la búsqueda activa y entrevistas?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Incluye optimización estratégica de perfil de LinkedIn, simulacros de entrevistas por competencias, definición de banda salarial pretenciosa y tácticas de negociación de propuestas laborales.</p></div>
+      </li>
+
+      <!-- GENERAL -->
+      <li class="faq-item" data-cat="general">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          <span>¿Por qué conviven servicios para empresas (B2B) y profesionales (B2C) bajo una misma propuesta?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Porque la atracción laboral es una ecuación de dos lados: para que exista una conexión real, la empresa debe saber fidelizar y el profesional debe saber comunicar su valor. Trabajar ambos frentes brinda una visión integral y real de lo que hoy exige el mercado.</p></div>
+      </li>
+
+    </ul>
+  </div>
+
+  <footer>
+    <div class="social">
+      <a href="https://www.instagram.com/Dani.RRHH" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.linkedin.com/in/DaniSanabria" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://www.tiktok.com/@danirrhh" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    </div>
+    <p>© 2026 Dani Sanabria · Mentoría Laboral · Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    /* FAQ Filters */
+    document.querySelectorAll('.faq-filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.faq-filter-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+          if (filter === 'all' || item.getAttribute('data-cat') === filter) {
+            item.classList.remove('hidden-faq');
+          } else {
+            item.classList.add('hidden-faq');
+          }
+        });
+      });
+    });
+
+    /* Mobile menu toggle for mega panels */
+    document.querySelectorAll('.nav-item.has-mega .nav-trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          trigger.closest('.nav-item').classList.toggle('open');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
